@@ -16,12 +16,7 @@ const HeaderContent = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const localization = useMemo(() => <Localization />, [i18n]);
-  return (
-    <>
-      {!downXS && <Search />}
-      {!downXS && localization}
-    </>
-  );
+  return <>{!downXS && localization}</>;
 };
 
 export default HeaderContent;
