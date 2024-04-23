@@ -167,9 +167,6 @@ const LandingPage = () => {
                     <a href="javascript:void(0)">AI</a>
                   </h4>
                   <p className="text">Get predicted performance of student and encourage to get better performance</p>
-                  <a className="more" href="javascript:void(0)">
-                    Learn More <i className="lni lni-chevron-right"> </i>
-                  </a>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -186,9 +183,6 @@ const LandingPage = () => {
                     <a href="javascript:void(0)">Data Visualization</a>
                   </h4>
                   <p className="text">Anayze all performance and main factor which affect the performance of student</p>
-                  <a className="more" href="javascript:void(0)">
-                    Learn More <i className="lni lni-chevron-right"> </i>
-                  </a>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -205,9 +199,6 @@ const LandingPage = () => {
                     <a href="javascript:void(0)">Powerful</a>
                   </h4>
                   <p className="text">You can easily predicted value and comprehensive information</p>
-                  <a className="more" href="javascript:void(0)">
-                    Learn More <i className="lni lni-chevron-right"> </i>
-                  </a>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -268,7 +259,7 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      Comprehensive <span> analysis</span>
+                      Comprehensive <span> Analysis</span>
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
@@ -302,7 +293,7 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      <span>Analyze student performance</span>
+                      <span>Analyze Student Performance</span>
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
@@ -340,7 +331,7 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title" style={{ marginBottom: '24px' }}>
-                      Cool facts <span> about this app</span>
+                      Cool Facts <span> About This App</span>
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
@@ -460,23 +451,23 @@ const LandingPage = () => {
                   </p>
                   <ul className="social">
                     <li>
-                      <a href="javascript:void(0)">
+                      <a href="https://wa.me/message/IGSA6YHQPVHDB1">
+                        <i className="lni lni-whatsapp"> </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/company/tarasolutions-cr/">
+                        <i className="lni lni-linkedin-original"> </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/profile.php?id=61552120787685&mibextid=LQQJ4d">
                         <i className="lni lni-facebook-filled"> </i>
                       </a>
                     </li>
                     <li>
-                      <a href="javascript:void(0)">
-                        <i className="lni lni-twitter-filled"> </i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0)">
+                      <a href="https://instagram.com/tara_solutions?igshid=OGQ5ZDc2ODk2ZA==">
                         <i className="lni lni-instagram-filled"> </i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0)">
-                        <i className="lni lni-linkedin-original"> </i>
                       </a>
                     </li>
                   </ul>
@@ -487,40 +478,27 @@ const LandingPage = () => {
                 <div className="footer-link d-flex mt-50 justify-content-sm-between">
                   <div className="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div className="footer-title">
-                      <h4 className="title">Quick Link</h4>
+                      <h4 className="title">LOCATIONS</h4>
                     </div>
                     <ul className="link">
-                      <li>
-                        <a href="javascript:void(0)">Privacy Policy</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Terms of Service</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Pricing</a>
-                      </li>
+                      <li><a>Costa Rica, San Jose, Barrio Amón, Ave 13, Calle 7,</a></li>
+                      <li><a>Republic of Panama, Ave Italia, Paitilla Gallery.</a></li>
                     </ul>
                   </div>
                   {/* <!-- footer wrapper --> */}
                   <div className="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div className="footer-title">
-                      <h4 className="title">Resources</h4>
+                      <h4 className="title">ABOUT</h4>
                     </div>
                     <ul className="link">
                       <li>
-                        <a href="javascript:void(0)">Home</a>
+                        <a href="https://tarasolutions-cr.com/eng/acerca-de/">About Tara Solutions</a>
                       </li>
                       <li>
-                        <a href="javascript:void(0)">Page</a>
+                        <a href="https://tarasolutions-cr.com/eng/contactenos/">Contact Us</a>
                       </li>
                       <li>
-                        <a href="javascript:void(0)">Portfolio</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Blog</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Contact</a>
+                        <a href="https://tarasolutions-cr.com/eng/unete-a-nosotros-2/">Join Us</a>
                       </li>
                     </ul>
                   </div>
