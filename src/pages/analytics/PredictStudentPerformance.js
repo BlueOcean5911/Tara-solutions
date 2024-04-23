@@ -70,7 +70,7 @@ const PredictStudentPerformance = () => {
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
                   Predict Student Performance
                 </Typography>
-                <Typography variant="h4" lineHeight={'2rem'} sx={{ fontSize: { xs: '1rem', md: '1.4rem' } }}>
+                <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
                   Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers
                   educators and institutions to proactively identify and support students at risk, while also enabling high-achieving
                   students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach

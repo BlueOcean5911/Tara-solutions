@@ -38,7 +38,7 @@ const ComprehensiveAnalysis = () => {
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
                   Comprehensive LMS analytics
                 </Typography>
-                <Typography variant="h4" lineHeight={'2rem'} sx={{ fontSize: { xs: '1rem', md: '1.4rem' } }}>
+                <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
                   Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of
                   insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators
                   can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning

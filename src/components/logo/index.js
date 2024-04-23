@@ -7,7 +7,7 @@ import { ButtonBase } from '@mui/material';
 // project import
 import LogoMain from './LogoMain';
 import LogoIcon from './LogoIcon';
-import { APP_DASHBOARD_PATH } from 'config';
+import { APP_DEFAULT_PATH } from 'config';
 
 // ==============================|| MAIN LOGO ||============================== //
 
@@ -15,7 +15,7 @@ const LogoSection = ({ reverse, isIcon, sx, to }) => (
   <ButtonBase
     disableRipple
     component={Link}
-    to={!to ? APP_DASHBOARD_PATH : to}
+    to={!to ? APP_DEFAULT_PATH : to}
     sx={{
       display: 'flex',
       alignItems: 'center',

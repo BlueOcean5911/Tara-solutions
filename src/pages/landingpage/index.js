@@ -15,7 +15,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <div className="preloader"  style={{ opacity: showPreloader ? 1 : 0, display: showPreloader ? 'block' : 'none' }}>
+      <div className="preloader" style={{ opacity: showPreloader ? 1 : 0, display: showPreloader ? 'block' : 'none' }}>
         <div className="loader">
           <div className="spinner">
             <div className="spinner-container">
@@ -38,7 +38,7 @@ const LandingPage = () => {
             <div className="row">
               <div className="col-lg-12">
                 <nav className="navbar navbar-expand-lg">
-                  <a className="navbar-brand" href="index.html">
+                  <a className="navbar-brand" href="/">
                     <img src="assets/images/logo/logo.png" alt="Logo" width="150px" height="80px" />
                   </a>
                   <button
@@ -82,6 +82,7 @@ const LandingPage = () => {
                           Contact US
                         </a>
                       </li>
+                      {/*  */}
                     </ul>
                   </div>
                 </nav>
@@ -109,7 +110,7 @@ const LandingPage = () => {
                     LMS Analytics
                   </h3>
                   <h2 className="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                    Analyze studuent performance
+                    Analyze Studuent Performance
                   </h2>
                   <p className="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                     You will get good idea from analysis of student performance.
@@ -236,9 +237,6 @@ const LandingPage = () => {
                     performance, data analysis, or creative tasks, AI is designed to offer comprehensive support and contribute meaningfully
                     to a wide range of endeavors.
                   </p>
-                  <a href="javascript:void(0)" className="main-btn">
-                    Try it Free
-                  </a>
                 </div>
                 {/* <!-- about content --> */}
               </div>
@@ -277,12 +275,8 @@ const LandingPage = () => {
                   <p className="text">
                     Comprehensive analysis involves a deep dive into data and information from multiple angles, providing actionable
                     insights for informed decision-making and continuous improvement. It integrates diverse perspectives to uncover patterns
-                    and trends, empowering organizations and individuals with strategic knowledge.amet. Lorem ipsum dolor sit amet,
-                    consetetur sadipscing.
+                    and trends, empowering organizations and individuals.
                   </p>
-                  <a href="javascript:void(0)" className="main-btn">
-                    Try it Free
-                  </a>
                 </div>
                 {/* <!-- about content --> */}
               </div>
@@ -316,9 +310,6 @@ const LandingPage = () => {
                     AI facilitates collaborative learning environments by providing personalized recommendations and adaptive learning
                     experiences, fostering knowledge sharing and skill development among students and educators alike.
                   </p>
-                  <a href="javascript:void(0)" className="main-btn">
-                    Try it Free
-                  </a>
                 </div>
                 {/* <!-- about content --> */}
               </div>
@@ -465,8 +456,7 @@ const LandingPage = () => {
                     <img src="assets/images/logo/logo.png" alt="logo" />
                   </a>
                   <p className="text">
-                    Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore
-                    magna aliquyam.
+                    TARA SMART metrics is a leading provider of comprehensive analysis services for Learning Management System (LMS).
                   </p>
                   <ul className="social">
                     <li>
@@ -501,13 +491,7 @@ const LandingPage = () => {
                     </div>
                     <ul className="link">
                       <li>
-                        <a href="javascript:void(0)">Road Map</a>
-                      </li>
-                      <li>
                         <a href="javascript:void(0)">Privacy Policy</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Refund Policy</a>
                       </li>
                       <li>
                         <a href="javascript:void(0)">Terms of Service</a>
@@ -550,9 +534,9 @@ const LandingPage = () => {
                     <h4 className="title">Contact Us</h4>
                   </div>
                   <ul className="contact">
-                    <li>+99999999</li>
-                    <li>info@gmail.com</li>
-                    <li>www.yourweb.com</li>
+                    <li>+(506) 8701-6253</li>
+                    <li>info@tarasolutions-cr.com</li>
+                    <li>tarasolutions-cr.com</li>
                     <li>
                       New York City , United <br />
                       States Of America 750.
