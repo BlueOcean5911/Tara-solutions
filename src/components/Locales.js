@@ -8,8 +8,14 @@ import { IntlProvider } from 'react-intl';
 import useConfig from 'hooks/useConfig';
 
 // load locales files
-const loadLocaleData = () => {
-  return import('utils/locales/en.json');
+const loadLocaleData = (locale) => {
+  switch (locale) {
+    case 'es':
+      return import('utils/locales/sp.json');
+    case 'en':
+    default:
+      return import('utils/locales/en.json');
+  }
 };
 
 // ==============================|| LOCALIZATION ||============================== //
