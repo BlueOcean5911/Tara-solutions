@@ -13,16 +13,16 @@ const GuestGuard = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     navigate(location?.state?.from ? location?.state?.from : APP_DASHBOARD_PATH, {
-  //       state: {
-  //         from: ''
-  //       },
-  //       replace: true
-  //     });
-  //   }
-  // }, [isLoggedIn, navigate, location]);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate(location?.state?.from ? location?.state?.from : APP_DASHBOARD_PATH, {
+        state: {
+          from: ''
+        },
+        replace: true
+      });
+    }
+  }, [isLoggedIn, navigate, location]);
 
   return children;
 };
