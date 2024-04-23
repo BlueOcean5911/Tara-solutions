@@ -1,4 +1,6 @@
 {
-    "dashboard": "Dashboard",
-    "analytics": "Analytics"
+  "dashboard": "Dashboard",
+  "analytics": "Analytics",
+  "analytics-predict": "Predict student performance",
+  "analytics-data": "Comprehensive analysis"
 }

@@ -12,7 +12,7 @@ const AuthForgotPassword = Loadable(lazy(() => import('pages/auth/forgot-passwor
 const AuthCheckMail = Loadable(lazy(() => import('pages/auth/check-mail')));
 const AuthResetPassword = Loadable(lazy(() => import('pages/auth/reset-password')));
 const AuthCodeVerification = Loadable(lazy(() => import('pages/auth/code-verification')));
-
+const LandingPage = Loadable(lazy(() => import('pages/landingpage')));
 // ==============================|| AUTH ROUTING ||============================== //
 
 const LoginRoutes = {
@@ -28,7 +28,7 @@ const LoginRoutes = {
       children: [
         {
           path: '/',
-          element: <AuthLogin />
+          element: <LandingPage />
         },
         {
           path: 'login',

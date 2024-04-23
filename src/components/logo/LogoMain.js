@@ -25,9 +25,7 @@ const LogoMain = ({ reverse }) => {
      *
      */
     <>
-      <Typography fontSize={'2rem'} fontWeight={'700'} fontFamily={'sans-serif'} color={'gray'} marginTop={'2rem'} gutterBottom>
-        LMS Analytics
-      </Typography>
+      <img src="/asset/image/logo.png" alt="Analytics" style={{ width: '140px', height: '80px' }} />
     </>
   );
 };
