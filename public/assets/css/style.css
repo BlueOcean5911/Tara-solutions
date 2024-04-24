@@ -150,8 +150,8 @@ p {
   z-index: 5;
   -webkit-transition: all 0.4s ease-out 0s;
   transition: all 0.4s ease-out 0s;
-  background: -webkit-gradient(linear, left top, right top, from(#33c8c1), color-stop(50%, #119bd2), to(#33c8c1));
-  background: linear-gradient(to right, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#051D40), color-stop(50%, #043262), to(#051D40));
+  background: linear-gradient(to right, #051D40 0%, #043262 50%, #051D40 100%);
   background-size: 200%;
 }
 
@@ -169,8 +169,8 @@ p {
 
 /*===== All Section Title Style =====*/
 .section-title .line {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe8464), to(#fe6e9a));
-  background: linear-gradient(#fe8464 0%, #fe6e9a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#F84F06), to(#FF7A41));
+  background: linear-gradient(#F84F06 0%, #FF7A41 100%);
   width: 150px;
   height: 5px;
   margin-bottom: 10px !important;
@@ -871,7 +871,7 @@ p {
 }
 
 .single-services:hover {
-  border-color: #fe7a7b;
+  border-color: #F84F06;
 }
 
 .single-services:hover .services-icon .shape {
@@ -1409,8 +1409,8 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background: -webkit-gradient(linear, left top, right top, from(#fe8464), color-stop(50%, #fe6e9a), to(#fe8464));
-  background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#F84F06), color-stop(50%, #ff8956), to(#F84F06));
+  background: linear-gradient(to right, #F84F06 0%, #ff8956 50%, #F84F06 100%);
   background-size: 200%;
   text-align: center;
   z-index: 99;

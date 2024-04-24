@@ -135,7 +135,7 @@ const PredictStudentPerformance = () => {
                 value={studentData.assessmentAverageScore}
                 onChange={(e) => setStudentData({ ...studentData, assessmentAverageScore: e.target.value })}
               />
-              <Button variant="contained" onClick={() => predict()}>
+              <Button variant="contained" sx={{ backgroundColor: '#043262' }} onClick={() => predict()}>
                 <FormattedMessage id="predict" />
               </Button>
             </Box>
@@ -145,7 +145,7 @@ const PredictStudentPerformance = () => {
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h3" component="h2">
-            <FormattedMessage id='predictedResult' />
+            <FormattedMessage id="predictedResult" />
           </Typography>
           <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             <FormattedMessage id={messageID} />

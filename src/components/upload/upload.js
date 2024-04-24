@@ -87,7 +87,13 @@ const UploadFiles = ({ setData }) => {
               )}
             </div>
             <aside className="selected-file-wrapper">
-              <Button variant="contained" endIcon={<CloudUploadOutlined />} disabled={!selectedFiles} onClick={upload}>
+              <Button
+                variant="contained"
+                endIcon={<CloudUploadOutlined />}
+                disabled={!selectedFiles}
+                sx={{ backgroundColor: '#043262' }}
+                onClick={upload}
+              >
                 <FormattedMessage id="upload" />
               </Button>
             </aside>

@@ -11,7 +11,7 @@ const Footer = () => (
     </Typography>
     <Stack spacing={1.5} direction="row" justifyContent="space-between" alignItems="center">
       <Link component={RouterLink} to="https://tarasolutions-cr.com/eng/acerca-de/" target="_blank" variant="caption" color="textPrimary">
-        <FormattedMessage id='contactUsLink1' />
+        <FormattedMessage id="contactUsLink1" />
       </Link>
     </Stack>
   </Stack>

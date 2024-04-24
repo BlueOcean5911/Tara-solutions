@@ -27,7 +27,7 @@ const Palette = (mode, presetColor) => {
     '#000000'
   ];
   let greyAscent = ['#fafafa', '#bfbfbf', '#434343', '#1f1f1f'];
-  let greyConstant = ['#fafafb', '#e6ebf1'];
+  let greyConstant = ['#e9eff2', '#e6ebf1'];
 
   if (mode === ThemeMode.DARK) {
     greyPrimary = ['#000000', '#141414', '#1e1e1e', '#595959', '#8c8c8c', '#bfbfbf', '#d9d9d9', '#f0f0f0', '#f5f5f5', '#fafafa', '#ffffff'];
