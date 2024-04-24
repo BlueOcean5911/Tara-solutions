@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
@@ -59,27 +60,22 @@ const LandingPage = () => {
                     <ul id="nav" className="navbar-nav ms-auto">
                       <li className="nav-item">
                         <a className="page-scroll active" href="#home">
-                          Home
+                          <FormattedMessage id="home" />
                         </a>
                       </li>
                       <li className="nav-item">
                         <a className="page-scroll" href="#features">
-                          Features
+                          <FormattedMessage id="features" />
                         </a>
                       </li>
                       <li className="nav-item">
                         <a className="page-scroll" href="#about">
-                          About
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#facts">
-                          Why
+                          <FormattedMessage id="about" />
                         </a>
                       </li>
                       <li className="nav-item">
                         <a className="page-scroll" href="#footer">
-                          Contact US
+                          <FormattedMessage id="contactUs" />
                         </a>
                       </li>
                       {/*  */}
@@ -107,16 +103,16 @@ const LandingPage = () => {
               <div className="col-lg-8">
                 <div className="header-hero-content text-center">
                   <h3 className="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                    LMS Analytics
+                    <FormattedMessage id="homeTitle" />
                   </h3>
                   <h2 className="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                    Analyze Studuent Performance
+                    <FormattedMessage id="homeSubtitle" />
                   </h2>
                   <p className="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                    You will get good idea from analysis of student performance.
+                    <FormattedMessage id="homeDescription" />
                   </p>
                   <a href="/dashboard" className="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">
-                    Get Started
+                    <FormattedMessage id="getStarted" />
                   </a>
                 </div>
                 {/* <!-- header hero content --> */}
@@ -146,8 +142,10 @@ const LandingPage = () => {
               <div className="section-title text-center pb-40">
                 <div className="line m-auto"></div>
                 <h3 className="title">
-                  Concrete and comprehensive analysis,
-                  <span> Comes with everything you need to Analyze!</span>
+                  <FormattedMessage id="featuresTitle1" />
+                  <span>
+                    <FormattedMessage id="featuresTitle2" />
+                  </span>
                 </h3>
               </div>
               {/* <!-- section title --> */}
@@ -164,9 +162,13 @@ const LandingPage = () => {
                 </div>
                 <div className="services-content mt-30">
                   <h4 className="services-title">
-                    <a href="javascript:void(0)">AI</a>
+                    <a href="javascript:void(0)">
+                      <FormattedMessage id="featuresSubtitle1" />
+                    </a>
                   </h4>
-                  <p className="text">Get predicted performance of student and encourage to get better performance</p>
+                  <p className="text">
+                    <FormattedMessage id="featuresSubdescription1" />
+                  </p>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -180,9 +182,13 @@ const LandingPage = () => {
                 </div>
                 <div className="services-content mt-30">
                   <h4 className="services-title">
-                    <a href="javascript:void(0)">Data Visualization</a>
+                    <a href="javascript:void(0)">
+                      <FormattedMessage id="featuresSubtitle2" />
+                    </a>
                   </h4>
-                  <p className="text">Anayze all performance and main factor which affect the performance of student</p>
+                  <p className="text">
+                    <FormattedMessage id="featuresSubdescription2" />
+                  </p>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -196,9 +202,13 @@ const LandingPage = () => {
                 </div>
                 <div className="services-content mt-30">
                   <h4 className="services-title">
-                    <a href="javascript:void(0)">Powerful</a>
+                    <a href="javascript:void(0)">
+                      <FormattedMessage id="featuresSubtitle3" />
+                    </a>
                   </h4>
-                  <p className="text">You can easily predicted value and comprehensive information</p>
+                  <p className="text">
+                    <FormattedMessage id="featuresSubdescription3" />
+                  </p>
                 </div>
               </div>
               {/* <!-- single services --> */}
@@ -219,14 +229,14 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      <span>Artificial Intelligence</span>
+                      <span>
+                        <FormattedMessage id="aboutTitle1" />
+                      </span>
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
                   <p className="text">
-                    AI technology can provide valuable and insightful information to assist you. Whether you need help with student
-                    performance, data analysis, or creative tasks, AI is designed to offer comprehensive support and contribute meaningfully
-                    to a wide range of endeavors.
+                    <FormattedMessage id="aboutDescription1" />
                   </p>
                 </div>
                 {/* <!-- about content --> */}
@@ -259,14 +269,12 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      Comprehensive <span> Analysis</span>
+                      <FormattedMessage id="aboutTitle2" />
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
                   <p className="text">
-                    Comprehensive analysis involves a deep dive into data and information from multiple angles, providing actionable
-                    insights for informed decision-making and continuous improvement. It integrates diverse perspectives to uncover patterns
-                    and trends, empowering organizations and individuals.
+                    <FormattedMessage id="aboutDescription2" />
                   </p>
                 </div>
                 {/* <!-- about content --> */}
@@ -293,13 +301,14 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      <span>Analyze Student Performance</span>
+                      <span>
+                        <FormattedMessage id="aboutTitle3" />
+                      </span>
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
                   <p className="text">
-                    AI facilitates collaborative learning environments by providing personalized recommendations and adaptive learning
-                    experiences, fostering knowledge sharing and skill development among students and educators alike.
+                    <FormattedMessage id="aboutDescription3" />
                   </p>
                 </div>
                 {/* <!-- about content --> */}
@@ -321,118 +330,16 @@ const LandingPage = () => {
         {/* <!--====== ABOUT PART ENDS ======--> */}
       </section>
 
-      {/* <!--====== VIDEO COUNTER PART START ======--> */}
-      <section id="facts" className="video-counter pt-70">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 order-lg-last">
-              <div className="counter-wrapper mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div className="counter-content">
-                  <div className="section-title">
-                    <div className="line"></div>
-                    <h3 className="title" style={{ marginBottom: '24px' }}>
-                      Cool Facts <span> About This App</span>
-                    </h3>
-                  </div>
-                  {/* <!-- section title --> */}
-                  <ui className="text">
-                    Personalized Insights <br />
-                    Empowering Educators <br />
-                    Data-Driven Approach <br />
-                    Student-Centric Focus <br />
-                    Continuous Improvement <br />
-                  </ui>
-                </div>
-                {/* <!-- counter content --> */}
-                <div className="row no-gutters">
-                  <div className="col-4">
-                    <div
-                      className="
-                        single-counter
-                        counter-color-1
-                        d-flex
-                        align-items-center
-                        justify-content-center
-                      "
-                    >
-                      <div className="counter-items text-center"></div>
-                    </div>
-                    {/* <!-- single counter --> */}
-                  </div>
-                  <div className="col-4">
-                    <div
-                      className="
-                        single-counter
-                        counter-color-2
-                        d-flex
-                        align-items-center
-                        justify-content-center
-                      "
-                    >
-                      <div className="counter-items text-center"></div>
-                    </div>
-                    {/* <!-- single counter --> */}
-                  </div>
-                  <div className="col-4">
-                    <div
-                      className="
-                        single-counter
-                        counter-color-3
-                        d-flex
-                        align-items-center
-                        justify-content-center
-                      "
-                    >
-                      <div className="counter-items text-center"></div>
-                    </div>
-                    {/* <!-- single counter --> */}
-                  </div>
-                </div>
-                {/* <!-- row --> */}
-              </div>
-              {/* <!-- counter wrapper --> */}
-            </div>
-            <div className="col-lg-6">
-              <div className="video-content mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img className="dots" src="assets/images/video/dots.svg" alt="dots" />
-                <div className="video-wrapper">
-                  <div className="video-image">
-                    <img src="assets/images/video/video.png" alt="video" />
-                  </div>
-                  <div className="video-icon">
-                    <a href="" className="video-popup glightbox">
-                      <i className="lni lni-play"> </i>
-                    </a>
-                  </div>
-                </div>
-                {/* <!-- video wrapper --> */}
-              </div>
-              {/* <!-- video content --> */}
-            </div>
-          </div>
-          {/* <!-- row --> */}
-        </div>
-        {/* <!-- container --> */}
-      </section>
-
       {/* <!--====== FOOTER PART START ======--> */}
       <footer id="footer" className="footer-area pt-120">
         <div className="container">
           <div className="subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-lg-12">
                 <div className="subscribe-content mt-45">
                   <h2 className="subscribe-title">
-                    Subscribe Our Newsletter <span>get reguler updates</span>
+                    <FormattedMessage id="contactUsTitle1" />
                   </h2>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="subscribe-form mt-50">
-                  <form action="#">
-                    <input type="text" placeholder="Enter eamil" />
-                    <button className="main-btn">Subscribe</button>
-                  </form>
                 </div>
               </div>
             </div>
@@ -447,7 +354,7 @@ const LandingPage = () => {
                     <img src="assets/images/logo/logo.png" alt="logo" />
                   </a>
                   <p className="text">
-                    TARA SMART metrics is a leading provider of comprehensive analysis services for Learning Management System (LMS).
+                    <FormattedMessage id="contactUsDescription1" />
                   </p>
                   <ul className="social">
                     <li>
@@ -478,27 +385,40 @@ const LandingPage = () => {
                 <div className="footer-link d-flex mt-50 justify-content-sm-between">
                   <div className="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div className="footer-title">
-                      <h4 className="title">LOCATIONS</h4>
+                      <h4 className="title">
+                        <FormattedMessage id="contactUsLocationTitle" />
+                      </h4>
                     </div>
                     <ul className="link">
-                      <li><a>Costa Rica, San Jose, Barrio Amón, Ave 13, Calle 7,</a></li>
-                      <li><a>Republic of Panama, Ave Italia, Paitilla Gallery.</a></li>
+                      <li>
+                        <a>
+                          <FormattedMessage id="contactUsLocation1" />
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <FormattedMessage id="contactUsLocation2" />
+                        </a>
+                      </li>
                     </ul>
                   </div>
                   {/* <!-- footer wrapper --> */}
                   <div className="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div className="footer-title">
-                      <h4 className="title">ABOUT</h4>
+                      <h4 className="title">
+                        <FormattedMessage id="contactUsAbout" />
+                      </h4>
                     </div>
                     <ul className="link">
                       <li>
-                        <a href="https://tarasolutions-cr.com/eng/acerca-de/">About Tara Solutions</a>
+                        <a href="https://tarasolutions-cr.com/eng/acerca-de/">
+                          <FormattedMessage id="contactUsLink1" />
+                        </a>
                       </li>
                       <li>
-                        <a href="https://tarasolutions-cr.com/eng/contactenos/">Contact Us</a>
-                      </li>
-                      <li>
-                        <a href="https://tarasolutions-cr.com/eng/unete-a-nosotros-2/">Join Us</a>
+                        <a href="https://tarasolutions-cr.com/eng/unete-a-nosotros-2/">
+                          <FormattedMessage id="contactUsLink2" />
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -509,15 +429,20 @@ const LandingPage = () => {
               <div className="col-lg-3 col-md-5 col-sm-12">
                 <div className="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                   <div className="footer-title">
-                    <h4 className="title">Contact Us</h4>
+                    <h4 className="title">
+                      {' '}
+                      <FormattedMessage id="contactUs" />
+                    </h4>
                   </div>
                   <ul className="contact">
-                    <li>+(506) 8701-6253</li>
-                    <li>info@tarasolutions-cr.com</li>
-                    <li>tarasolutions-cr.com</li>
                     <li>
-                      New York City , United <br />
-                      States Of America 750.
+                      <FormattedMessage id="contactUsTelephone" />
+                    </li>
+                    <li>
+                      <FormattedMessage id="contactUsMail" />
+                    </li>
+                    <li>
+                      <FormattedMessage id="contactUsWebsite" />
                     </li>
                   </ul>
                 </div>

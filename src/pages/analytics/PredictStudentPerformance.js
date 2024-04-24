@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 // project import
 import MainCard from 'components/MainCard';
 import { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import uploadFilesService from 'service/upload-files.service';
 
 // ==============================|| SAMPLE PAGE ||============================== //
@@ -34,21 +35,25 @@ const PredictStudentPerformance = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [message, setMessage] = useState('');
+  const [messageID, setMessageID] = useState('');
   const predict = () => {
     uploadFilesService
       .predict(studentData)
       .then((response) => {
         if (response.data.status_code === 200) {
           if (response.data.result === 1) {
-            setMessage(' This student will be completed the course successfully.');
+            setMessageID('predictMessage1');
           } else {
-            setMessage(' This student may need some additional support to successfully complete the course.');
+            setMessageID('predictMessage2');
           }
           handleOpen();
+        } else {
+          setMessageID('serverError');
         }
       })
       .catch((e) => {
+        setMessageID('networkError');
+        handleOpen();
         console.log(e);
       });
   };
@@ -68,14 +73,10 @@ const PredictStudentPerformance = () => {
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
               >
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
-                  Predict Student Performance
+                  <FormattedMessage id="predictStuPerf" />
                 </Typography>
                 <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
-                  Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers
-                  educators and institutions to proactively identify and support students at risk, while also enabling high-achieving
-                  students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach
-                  provides a comprehensive overview of student engagement, progress, and potential success within the online course
-                  environment.
+                  <FormattedMessage id="predictStuPerfDisp" />
                 </Typography>
               </Box>
             </Grid>
@@ -91,7 +92,7 @@ const PredictStudentPerformance = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }} gap={4}>
               <TextField
                 id="day_studied"
-                label="Day stuided"
+                label={<FormattedMessage id="dayStudied" />}
                 variant="outlined"
                 type="number"
                 defaultValue={0}
@@ -100,7 +101,7 @@ const PredictStudentPerformance = () => {
               />
               <TextField
                 id="activities_engaged"
-                label="Activity Engaged"
+                label={<FormattedMessage id="activityEngagement" />}
                 variant="outlined"
                 type="number"
                 defaultValue={0}
@@ -109,7 +110,7 @@ const PredictStudentPerformance = () => {
               />
               <TextField
                 id="total_clicks"
-                label="Total clicks"
+                label={<FormattedMessage id="totalClicks" />}
                 variant="outlined"
                 type="number"
                 defaultValue={0}
@@ -118,7 +119,7 @@ const PredictStudentPerformance = () => {
               />
               <TextField
                 id="assessments_completed"
-                label="Assessment completed Rate(%)"
+                label={<FormattedMessage id="assessCompletedRate" />}
                 variant="outlined"
                 type="number"
                 defaultValue={0}
@@ -127,7 +128,7 @@ const PredictStudentPerformance = () => {
               />
               <TextField
                 id="average_assessment_score"
-                label="Average assessment score"
+                label={<FormattedMessage id="averageAssessmentScore" />}
                 variant="outlined"
                 type="number"
                 defaultValue={0}
@@ -135,7 +136,7 @@ const PredictStudentPerformance = () => {
                 onChange={(e) => setStudentData({ ...studentData, assessmentAverageScore: e.target.value })}
               />
               <Button variant="contained" onClick={() => predict()}>
-                Predict
+                <FormattedMessage id="predict" />
               </Button>
             </Box>
           </Box>
@@ -144,10 +145,10 @@ const PredictStudentPerformance = () => {
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h3" component="h2">
-            Result
+            <FormattedMessage id='predictedResult' />
           </Typography>
           <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
-            {message}
+            <FormattedMessage id={messageID} />
           </Typography>
         </Box>
       </Modal>

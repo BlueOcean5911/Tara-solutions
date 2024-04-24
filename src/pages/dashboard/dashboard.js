@@ -12,6 +12,7 @@ import CompletitionRateOnCourse from 'sections/dashboard/CompletitionRateOnCours
 import GenderAnalytics from 'sections/dashboard/GenderAnalytics';
 import FinalResult from 'sections/dashboard/PerformanceAnalytics';
 import QualificationAnalytics from 'sections/dashboard/QualificationAnalytics';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -19,19 +20,29 @@ const Dashboard = () => (
   <Grid container rowSpacing={4.5} columnSpacing={2.75}>
     {/* row 1 */}
     <Grid item xs={12} sx={{ mb: -2.25 }}>
-      <Typography variant="h5">Comprehensive Educational Performance Metrics</Typography>
+      <Typography variant="h5">
+        <FormattedMessage id="dashboardTitle1" />
+      </Typography>
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <AnalyticEcommerce title="Total Students" count="23,537" extra="Active Users" />
+      <AnalyticEcommerce title={<FormattedMessage id="totalStudents" />} count="23,537" extra={<FormattedMessage id="activeUsers" />} />
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <AnalyticEcommerce title="Total course" count="7" extra="Active Course" />
+      <AnalyticEcommerce title={<FormattedMessage id="totalCourse" />} count="7" extra={<FormattedMessage id="activeCourse" />} />
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <AnalyticEcommerce title="Assessment Average" count="61" extra="Assessment Average of total course" />
+      <AnalyticEcommerce
+        title={<FormattedMessage id="assessmentAverage" />}
+        count="61"
+        extra={<FormattedMessage id="assessmentAverageDisp" />}
+      />
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <AnalyticEcommerce title="Engagement Average" count="276" extra="Engagement Average of total course" />
+      <AnalyticEcommerce
+        title={<FormattedMessage id="engagementAverage" />}
+        count="276"
+        extra={<FormattedMessage id="engagementAverageDisp" />}
+      />
     </Grid>
 
     {/* row 2 */}
@@ -41,7 +52,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Predicted Student Performance
+              <FormattedMessage id="predictedStudentPerformance" />
             </Typography>
           </Stack>
         </Box>
@@ -56,7 +67,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Predicted Student Performance on Gender
+              <FormattedMessage id="predictedStuPerfOnGender" />
             </Typography>
           </Stack>
         </Box>
@@ -68,7 +79,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Predicted Student Performance on Age
+              <FormattedMessage id="predStuPerfOnAge" />
             </Typography>
           </Stack>
         </Box>
@@ -82,7 +93,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Predicted Student Performance on Course
+              <FormattedMessage id="predStuPerfOnCourse" />
             </Typography>
           </Stack>
         </Box>
@@ -94,7 +105,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Predicted Student Performance on Qualification
+              <FormattedMessage id="predStuPerfOnQualification" />
             </Typography>
           </Stack>
         </Box>
@@ -104,14 +115,16 @@ const Dashboard = () => (
 
     {/* row 5 */}
     <Grid item xs={12} sx={{ mb: -2.25 }}>
-      <Typography variant="h5">Assessment Analytics</Typography>
+      <Typography variant="h5">
+        <FormattedMessage id="assessmentAnalytics" />
+      </Typography>
     </Grid>
     <Grid item xs={12} lg={6}>
       <MainCard sx={{ mt: 2 }} content={false}>
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Distribution of average assessment on courses
+              <FormattedMessage id="distOfAveAssessOnCourse" />
             </Typography>
           </Stack>
         </Box>
@@ -123,7 +136,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Activity Engaged on Course
+              <FormattedMessage id="activityEngagedOnCourse" />
             </Typography>
           </Stack>
         </Box>
@@ -138,7 +151,7 @@ const Dashboard = () => (
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
             <Typography variant="h6" color="textSecondary">
-              Completition Rate on Course
+              <FormattedMessage id="completedRateOnCourse" />
             </Typography>
           </Stack>
         </Box>

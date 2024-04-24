@@ -14,6 +14,7 @@ import FinalResult from 'sections/dashboard/PerformanceAnalytics';
 import QualificationAnalytics from 'sections/dashboard/QualificationAnalytics';
 import UploadFiles from 'components/upload/upload';
 import { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -36,13 +37,10 @@ const ComprehensiveAnalysis = () => {
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
               >
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
-                  Comprehensive LMS analytics
+                  <FormattedMessage id="comprehensiveLMSAnalytics" />
                 </Typography>
                 <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
-                  Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of
-                  insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators
-                  can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning
-                  environment for all students.
+                  <FormattedMessage id="comprehensiveLMSAnalyticsDisp" />
                 </Typography>
               </Box>
             </Grid>
@@ -57,19 +55,37 @@ const ComprehensiveAnalysis = () => {
         <>
           {/* row 1 */}
           <Grid item xs={12} sx={{ mb: -2.25 }}>
-            <Typography variant="h5">Comprehensive Educational Performance Metrics</Typography>
+            <Typography variant="h5">
+              <FormattedMessage id="compEduPerfMetrics" />
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <AnalyticEcommerce title="Total Students" count={data.total_student} extra="Active Users" />
+            <AnalyticEcommerce
+              title={<FormattedMessage id="totalStudents" />}
+              count={data.total_student}
+              extra={<FormattedMessage id="activeUsers" />}
+            />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <AnalyticEcommerce title="Total course" count={data.total_course} extra="Active Course" />
+            <AnalyticEcommerce
+              title={<FormattedMessage id="totalCourse" />}
+              count={data.total_course}
+              extra={<FormattedMessage id="activeCourse" />}
+            />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <AnalyticEcommerce title="Assessment Average" count={data.average_score} extra="Assessment Average of total course" />
+            <AnalyticEcommerce
+              title={<FormattedMessage id="assessmentAverage" />}
+              count={data.average_score}
+              extra={<FormattedMessage id="assessmentAverageDisp" />}
+            />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <AnalyticEcommerce title="Engagement Average" count={data.engagement_average} extra="Engagement Average of total course" />
+            <AnalyticEcommerce
+              title={<FormattedMessage id="engagementAverage" />}
+              count={data.engagement_average}
+              extra={<FormattedMessage id="engagementAverageDisp" />}
+            />
           </Grid>
 
           {/* row 2 */}
@@ -79,7 +95,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Predicted Student Performance
+                    <FormattedMessage id="predictedStudentPerformance" />
                   </Typography>
                 </Stack>
               </Box>
@@ -94,7 +110,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Predicted Student Performance on Gender
+                    <FormattedMessage id="predictedStuPerfOnGender" />
                   </Typography>
                 </Stack>
               </Box>
@@ -106,7 +122,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Predicted Student Performance on Age
+                    <FormattedMessage id="predStuPerfOnAge" />
                   </Typography>
                 </Stack>
               </Box>
@@ -120,7 +136,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Predicted Student Performance on Course
+                    <FormattedMessage id="predStuPerfOnCourse" />
                   </Typography>
                 </Stack>
               </Box>
@@ -132,7 +148,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Predicted Student Performance on Qualification
+                    <FormattedMessage id="predStuPerfOnQualification" />
                   </Typography>
                 </Stack>
               </Box>
@@ -142,14 +158,16 @@ const ComprehensiveAnalysis = () => {
 
           {/* row 5 */}
           <Grid item xs={12} sx={{ mb: -2.25 }}>
-            <Typography variant="h5">Assessment Analytics</Typography>
+            <Typography variant="h5">
+              <FormattedMessage id="assessmentAnalytics" />
+            </Typography>
           </Grid>
           <Grid item xs={12} lg={6}>
             <MainCard sx={{ mt: 2 }} content={false}>
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Distribution of average assessment on courses
+                    <FormattedMessage id="distOfAveAssessOnCourse" />
                   </Typography>
                 </Stack>
               </Box>
@@ -161,7 +179,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Activity Engaged on Course
+                    <FormattedMessage id="activityEngagedOnCourse" />
                   </Typography>
                 </Stack>
               </Box>
@@ -176,7 +194,7 @@ const ComprehensiveAnalysis = () => {
               <Box sx={{ p: 3, pb: 0 }}>
                 <Stack spacing={2}>
                   <Typography variant="h6" color="textSecondary">
-                    Completition Rate on Course
+                    <FormattedMessage id="completedRateOnCourse" />
                   </Typography>
                 </Stack>
               </Box>

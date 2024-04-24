@@ -2,6 +2,7 @@ import { CloudUploadOutlined } from '@ant-design/icons';
 import { Box, Button, Modal, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
+import { FormattedMessage } from 'react-intl';
 import UploadService from 'service/upload-files.service';
 
 const style = {
@@ -20,7 +21,7 @@ const UploadFiles = ({ setData }) => {
   const [selectedFiles, setSelectedFiles] = useState(undefined);
   const [currentFile, setCurrentFile] = useState(undefined);
   const [progress, setProgress] = useState(0);
-  const [message, setMessage] = useState('');
+  const [messageId, setMessageId] = useState('');
 
   const upload = () => {
     let currentFile = selectedFiles[0];
@@ -39,7 +40,7 @@ const UploadFiles = ({ setData }) => {
         console.log(e);
         setProgress(0);
         // Todo: show the modal
-        setMessage('Data file is not uploaded successfully. Please recheck your data format and try again.');
+        setMessageId('warningMessage1');
         handleOpen();
         setCurrentFile(undefined);
       });
@@ -82,12 +83,12 @@ const UploadFiles = ({ setData }) => {
               {selectedFiles && selectedFiles[0].name ? (
                 <div className="selected-file">{selectedFiles && selectedFiles[0].name}</div>
               ) : (
-                'Drag and drop file here, or click to select file'
+                <FormattedMessage id="uploadDisp" />
               )}
             </div>
             <aside className="selected-file-wrapper">
               <Button variant="contained" endIcon={<CloudUploadOutlined />} disabled={!selectedFiles} onClick={upload}>
-                Upload
+                <FormattedMessage id="upload" />
               </Button>
             </aside>
           </section>
@@ -97,10 +98,10 @@ const UploadFiles = ({ setData }) => {
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h4" component="h2" aliggn>
-            Warning
+            <FormattedMessage id="warning" />
           </Typography>
           <Typography id="modal-modal-description" variant="body1" sx={{ mt: 2 }}>
-            {message}
+            <FormattedMessage id={messageId} />
           </Typography>
         </Box>
       </Modal>

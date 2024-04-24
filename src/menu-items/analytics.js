@@ -16,14 +16,14 @@ const analytics = {
   children: [
     {
       id: 'analytics-predict',
-      title: <FormattedMessage id="analytics-predict" />,
+      title: <FormattedMessage id="analyticsPredict" />,
       type: 'item',
       url: '/analytics/predict',
       icon: icons.StockOutlined
     },
     {
       id: 'analytics-',
-      title: <FormattedMessage id="analytics-data" />,
+      title: <FormattedMessage id="comprehensiveAnalytics" />,
       type: 'item',
       url: '/analytics/comprehensive-analysis',
       icon: icons.BarChartOutlined

@@ -1124,7 +1124,7 @@ p {
   SUBSCRIBE  css 
 ===========================*/
 .subscribe-area {
-  padding: 40px 50px 90px;
+  padding: 70px 80px 90px;
   -webkit-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   border-radius: 10px;
@@ -1138,6 +1138,7 @@ p {
 }
 
 .subscribe-content .subscribe-title {
+  text-align: center;
   font-size: 35px;
   font-weight: 700;
 }

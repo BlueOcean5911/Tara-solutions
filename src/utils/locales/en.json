@@ -1,6 +1,106 @@
 {
+  "home": "Home",
+  "homeTitle": "LMS Analytics",
+  "homeSubtitle": "Analyze Student Performance",
+  "homeDescription": "Gain valuable insights from student performance analysis.",
+
+  "features": "Features",
+  "featuresTitle1": "Concrete and Comprehensive Analysis",
+  "featuresTitle2": "Comes with everything you need to analyze!",
+  "featuresSubtitle1": "AI",
+  "featuresSubdescription1": "Get predicted student performance and encourage better outcomes.",
+  "featuresSubtitle2": "Data Visualization",
+  "featuresSubdescription2": "Analyze all performance affecting student performance.",
+  "featuresSubtitle3": "Powerful",
+  "featuresSubdescription3": "Easily predict values and obtain comprehensive information.",
+
+  "about": "About",
+  "aboutTitle1": "Artificial Intelligence",
+  "aboutDescription1": "AI technology provides valuable and insightful information to assist with student performance, data analysis, and creative tasks.",
+  "aboutTitle2": "Comprehensive Analysis",
+  "aboutDescription2": "Involves a deep dive into data and information from multiple angles, providing actionable insights for informed decision-making and continuous improvement.",
+  "aboutTitle3": "Analyze Student Performance",
+  "aboutDescription3": "AI facilitates collaborative learning environments by providing personalized recommendations and adaptive learning experiences.",
+
+  "contactUs": "Contact Us",
+  "contactUsTitle1": "Let's Dive into LMS Analytics",
+  "contactUsDescription1": "TARA SMART metrics is a leading provider of comprehensive analysis services for Learning Management System (LMS).",
+  "contactUsLocationTitle": "LOCATIONS",
+  "contactUsLocation1": "Costa Rica, San Jose, Barrio Amón, Ave 13, Calle 7.",
+  "contactUsLocation2": "Republic of Panama, Ave Italia, Paitilla Gallery.",
+  "contactUsAbout": "ABOUT",
+  "contactUsLink1": "About Tara Solutions",
+  "contactUsLink2": "Join Us",
+  "contactUsTelephone": "+(506) 8701-6253",
+  "contactUsMail": "info@tarasolutions-cr.com",
+  "contactUsWebsite": "tarasolutions-cr.com",
+
+  "getStarted": "Get Started",
+
   "dashboard": "Dashboard",
+  "dashboardTitle1": "Comprehensive Educational Performance Metrics",
+  "totalStudents": "Total Students",
+  "activeUsers": "Active Users",
+  "activeCourse": "Active Course",
+  "totalCourse": "Total Courses",
+  "assessmentAverage": "Assessment Average",
+  "assessmentAverageDisp": "Assessment Average of Total Course",
+  "engagementAverage": "Engagement Average",
+  "engagementAverageDisp": "Engagement Average Over Total Course",
+  "predictedStudentPerformance": "Predicted Student Performance",
+
+  "distinct": "Distinct",
+  "pass": "Pass",
+  "fail": "Fail",
+  "withdrawn": "Withdrawn",
+
+  "predictedStuPerfOnGender": "Predicted Student Performance on Gender",
+  "predStuPerfOnAge": "Predicted Student Performance on Age",
+  "predStuPerfOnCourse": "Predicted Student Performance on Course",
+  "predStuPerfOnQualification": "Predicted Student Performance on Qualification",
+
+  "qualALevel": "A Level of Equivalent",
+  "qualHEQualification": "He Qualification",
+  "qualLowerThanLevel": "Lower Than A Level",
+  "qualNoFormatQuals": "No Formal Quals",
+  "qualPostGraduageQualifiction": "Post Graduage Qualification",
+
+  "assessmentAnalytics": "Assessment Analytics",
+  "distOfAveAssessOnCourse": "Distribution of Average Assessment on Course",
+  "activityEngagedOnCourse": "Engaged Activity on Course",
+
+  "completedRateOnCourse": "Completition Rate on Course",
+
   "analytics": "Analytics",
-  "analytics-predict": "Student performance",
-  "analytics-data": "Comprehensive analysis"
+  "analyticsPredict": "Analytics Predict",
+  "comprehensiveAnalytics": "Comprehensive Analytics",
+
+  "predictStuPerf": "Predict Student Performance",
+  "predictStuPerfDisp": "Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers educators and institutions to proactively identify and support students at risk, while also enabling high-achieving students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach provides a comprehensive overview of student engagement, progress, and potential success within the online course environment.",
+
+  "dayStudied": "Day Studied",
+  "activityEngagement": "Activity Engagement",
+  "totalClicks": "Total Clicks",
+  "assessCompletedRate": "Assessemnt Completed Rate(%)",
+  "averageAssessmentScore": "Average Assessment Score",
+  "predict": "Predict",
+  "predictedResult": "Predicted Result",
+
+  "comprehensiveLMSAnalytics": "Comprehensive LMS Analytics",
+  "comprehensiveLMSAnalyticsDisp": "Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning environment for all students.",
+
+  "compEduPerfMetrics": "Comprehensive Educational Performance Metrics",
+
+  "uploadDisp": "Drag and drop file here, or click to select file",
+  "upload": "Upload",
+
+  "allRightReserved": "All rights reserved",
+
+  "predictMessage1": " This student will be completed the course successfully.",
+  "predictMessage2": " This student may need some additional support to successfully complete the course.",
+  "networkError": "There might be some issue with network, please check your network",
+  "serverError": "We'll be back to you in a moment",
+
+  "warning": "Warning",
+  "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again."
 }
