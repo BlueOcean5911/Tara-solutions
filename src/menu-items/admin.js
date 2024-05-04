@@ -23,9 +23,9 @@ const analytics = {
     },
     {
       id: 'waitlist',
-      title: <FormattedMessage id="waitlist" />,
+      title: <FormattedMessage id="demoRequest" />,
       type: 'item',
-      url: '/admin/waitlist',
+      url: '/admin/demo-request',
       icon: icons.PlusCircleOutlined
     }
   ]

@@ -14,8 +14,8 @@ const MaintenanceUnderConstruction = Loadable(lazy(() => import('pages/maintenan
 const MaintenanceComingSoon = Loadable(lazy(() => import('pages/maintenance/coming-soon')));
 
 // render - sample page
-const Users = Loadable(lazy(() => import('pages/admin/users')));
-const Waitlist = Loadable(lazy(() => import('pages/admin/waitlist')));
+const Users = Loadable(lazy(() => import('pages/admin/Users')));
+const DemoRequest = Loadable(lazy(() => import('pages/admin/DemoRequest')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -38,8 +38,8 @@ const MainRoutes = {
               element: <Users />
             },
             {
-              path: 'waitlist',
-              element: <Waitlist />
+              path: 'demo-request',
+              element: <DemoRequest />
             }
           ]
         }

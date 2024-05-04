@@ -104,5 +104,9 @@
   "warning": "Warning",
   "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again.",
 
-  "errorLogin": "Email or password is incorrect."
+  "errorLogin": "Email or password is incorrect.",
+
+  "admin": "Admin",
+  "users": "Users",
+  "demoRequest": "Demo Request"
 }
