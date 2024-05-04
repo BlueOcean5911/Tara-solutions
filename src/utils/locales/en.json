@@ -47,17 +47,17 @@
   "assessmentAverageDisp": "Assessment Average of Total Course",
   "engagementAverage": "Engagement Average",
   "engagementAverageDisp": "Engagement Average Over Total Course",
-  "predictedStudentPerformance": "Predicted Student Performance",
+  "predictedStudentPerformance": "Student Performance",
 
   "distinct": "Distinct",
   "pass": "Pass",
   "fail": "Fail",
   "withdrawn": "Withdrawn",
 
-  "predictedStuPerfOnGender": "Predicted Student Performance on Gender",
-  "predStuPerfOnAge": "Predicted Student Performance on Age",
-  "predStuPerfOnCourse": "Predicted Student Performance on Course",
-  "predStuPerfOnQualification": "Predicted Student Performance on Qualification",
+  "predictedStuPerfOnGender": "Student Performance on Gender",
+  "predStuPerfOnAge": "Student Performance on Age",
+  "predStuPerfOnCourse": "Student Performance on Course",
+  "predStuPerfOnQualification": "Student Performance on Qualification",
 
   "qualALevel": "A Level of Equivalent",
   "qualHEQualification": "He Qualification",
@@ -102,5 +102,7 @@
   "serverError": "We'll be back to you in a moment",
 
   "warning": "Warning",
-  "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again."
+  "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again.",
+
+  "errorLogin": "Email or password is incorrect."
 }

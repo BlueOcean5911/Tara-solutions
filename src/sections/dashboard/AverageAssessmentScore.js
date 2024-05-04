@@ -37,7 +37,7 @@ const AverageAssessmentScore = ({ series = distributionAverageAssessmentOnCourse
     },
     yaxis: {
       labels: {
-        show: true,
+        show: false,
         formatter: function (value) {
           return value.toExponential(2);
         }

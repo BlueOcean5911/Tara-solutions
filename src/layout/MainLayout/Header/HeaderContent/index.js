@@ -4,9 +4,10 @@ import { useMemo } from 'react';
 import { Box, useMediaQuery } from '@mui/material';
 
 // project import
-import Search from './Search';
+import Profile from './Profile';
 import Localization from './Localization';
 import useConfig from 'hooks/useConfig';
+import Search from './Search';
 
 // ==============================|| HEADER - CONTENT ||============================== //
 
@@ -16,7 +17,13 @@ const HeaderContent = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const localization = useMemo(() => <Localization />, [i18n]);
-  return <>{!downXS && localization}</>;
+  return (
+    <>
+      {localization}
+      <Box sx={{ width: '100%', ml: { xs: 0, md: 1 } }} />
+      <Profile />
+    </>
+  );
 };
 
 export default HeaderContent;

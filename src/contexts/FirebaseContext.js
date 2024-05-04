@@ -41,8 +41,9 @@ export const FirebaseProvider = ({ children }) => {
 
   useEffect(
     () =>
-      firebase.auth().onAuthStateChanged((user) => {
+      firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
+          // Dispatch user information including role to Redux store
           dispatch({
             type: LOGIN,
             payload: {
@@ -50,8 +51,7 @@ export const FirebaseProvider = ({ children }) => {
               user: {
                 id: user.uid,
                 email: user.email,
-                name: user.displayName || 'Stebin Ben',
-                role: 'UI/UX Designer'
+                name: user.displayName,
               }
             }
           });
@@ -82,7 +82,22 @@ export const FirebaseProvider = ({ children }) => {
     return firebase.auth().signInWithPopup(provider);
   };
 
-  const firebaseRegister = async (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password);
+  const firebaseRegister = async (email, password, firstName, lastName, company) => {
+    try {
+      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      // After successful registration, set the user's display name
+      await userCredential.user.updateProfile({
+        displayName: firstName + ' ' + lastName,
+        metadata: {
+          role: "viewer"
+        }
+      });
+      console.log('User registered successfully');
+    } catch (error) {
+      // Handle registration error
+      console.error('Error registering user:', error.message);
+    }
+  };
 
   const logout = () => firebase.auth().signOut();
 

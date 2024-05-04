@@ -42,15 +42,15 @@
   "assessmentAverageDisp": "Evaluación Promedio del Curso Total",
   "engagementAverage": "Promedio de participación",
   "engagementAverageDisp": "Promedio de participación sobre el curso total",
-  "predictedStudentPerformance": "Rendimiento estudiantil previsto",
+  "predictedStudentPerformance": "Rendimiento estudiantil",
   "distinct": "Distinto",
   "pass": "Aprobar",
   "fail": "Fallar",
   "withdrawn": "Retirado",
-  "predictedStuPerfOnGender": "Rendimiento estudiantil previsto en materia de género",
-  "predStuPerfOnAge": "Rendimiento previsto de los estudiantes según la edad",
-  "predStuPerfOnCourse": "Rendimiento previsto del estudiante en el curso",
-  "predStuPerfOnQualification": "Rendimiento previsto del estudiante en la calificación",
+  "predictedStuPerfOnGender": "Desempeño estudiantil en género",
+  "predStuPerfOnAge": "Desempeño de los estudiantes en función de la edad",
+  "predStuPerfOnCourse": "Rendimiento del estudiante en el curso",
+  "predStuPerfOnQualification": "Desempeño estudiantil en calificación",
   "qualALevel": "Un nivel de equivalente",
   "qualHEQualification": "Él calificación",
   "qualLowerThanLevel": "Inferior a un nivel",
@@ -85,5 +85,7 @@
   "serverError": " La contactaremos en un momento.",
   
   "warning": "Advertencia",
-  "warningMessage1": "El archivo de datos no se cargó correctamente. Vuelva a verificar el formato de sus datos e inténtelo nuevamente."
+  "warningMessage1": "El archivo de datos no se cargó correctamente. Vuelva a verificar el formato de sus datos e inténtelo nuevamente.",
+
+  "errorLogin": "Correo electrónico o la contraseña son incorrectos."
 }

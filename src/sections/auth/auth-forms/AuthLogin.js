@@ -28,13 +28,14 @@ import AnimateButton from 'components/@extended/AnimateButton';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { FormattedMessage } from 'react-intl';
 
 // ============================|| JWT - LOGIN ||============================ //
 
 const AuthLogin = () => {
   const [checked, setChecked] = React.useState(false);
 
-  const { login } = useAuth();
+  const { firebaseEmailPasswordSignIn } = useAuth();
   const scriptedRef = useScriptRef();
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -50,8 +51,8 @@ const AuthLogin = () => {
     <>
       <Formik
         initialValues={{
-          email: 'info@codedthemes.com',
-          password: '123456',
+          email: '',
+          password: '',
           submit: null
         }}
         validationSchema={Yup.object().shape({
@@ -60,7 +61,7 @@ const AuthLogin = () => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            await login(values.email, values.password);
+            await firebaseEmailPasswordSignIn(values.email, values.password);
             if (scriptedRef.current) {
               setStatus({ success: true });
               setSubmitting(false);
@@ -69,7 +70,7 @@ const AuthLogin = () => {
             console.error(err);
             if (scriptedRef.current) {
               setStatus({ success: false });
-              setErrors({ submit: err.message });
+              setErrors({ submit: 'errorLogin' });
               setSubmitting(false);
             }
           }
@@ -155,7 +156,9 @@ const AuthLogin = () => {
               </Grid>
               {errors.submit && (
                 <Grid item xs={12}>
-                  <FormHelperText error>{errors.submit}</FormHelperText>
+                  <FormHelperText error>
+                    <FormattedMessage id={errors.submit} />
+                  </FormHelperText>
                 </Grid>
               )}
               <Grid item xs={12}>
