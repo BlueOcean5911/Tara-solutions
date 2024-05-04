@@ -5,6 +5,7 @@ import LoginRoutes from './LoginRoutes';
 import MainRoutes from './MainRoutes';
 import LandingPage from 'pages/landingpage';
 import CommonLayout from 'layout/CommonLayout';
+import AdminRoutes from './AdminRoutes';
 import Localization from 'layout/MainLayout/Header/HeaderContent/Localization';
 
 // ==============================|| ROUTING RENDER ||============================== //
@@ -27,6 +28,7 @@ export default function ThemeRoutes() {
       ]
     },
     LoginRoutes,
-    MainRoutes
+    MainRoutes,
+    AdminRoutes
   ]);
 }
