@@ -106,7 +106,7 @@
 
   "errorLogin": "Email or password is incorrect.",
 
-  "admin": "Admin",
+  "admin": "Administrador",
   "users": "Users",
   "demoRequest": "Demo Request"
 }

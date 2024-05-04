@@ -87,5 +87,9 @@
   "warning": "Advertencia",
   "warningMessage1": "El archivo de datos no se cargó correctamente. Vuelva a verificar el formato de sus datos e inténtelo nuevamente.",
 
-  "errorLogin": "Correo electrónico o la contraseña son incorrectos."
+  "errorLogin": "Correo electrónico o la contraseña son incorrectos.",
+
+  "admin": "Administrador",
+  "users": "Usuarios",
+  "demoRequest": "Solicitud de demostración"
 }
