@@ -1,6 +1,9 @@
 export async function findUserByEmail(db, email) {
   try {
-    const { data: user, error } = await db.from('users').select('*').eq('email', email).single();
+    const {
+      data: { user },
+      error
+    } = await db.from('users').select('*').eq('email', email).single();
 
     if (error) {
       console.error('Error findUserByEmail:', error.message);
