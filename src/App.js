@@ -8,7 +8,7 @@ import Snackbar from 'components/@extended/Snackbar';
 import Notistack from 'components/third-party/Notistack';
 
 // auth-provider
-import { FirebaseProvider as AuthProvider } from 'contexts/FirebaseContext';
+import { SupabaseProvider as AuthProvider } from 'contexts/SupabaseContext';
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
 
@@ -17,14 +17,14 @@ const App = () => (
     {/* <RTLLayout> */}
     <Locales>
       <ScrollTop>
-        <AuthProvider>
-          <>
-            <Notistack>
+        <Notistack>
+          <AuthProvider>
+            <>
               <Routes />
               <Snackbar />
-            </Notistack>
-          </>
-        </AuthProvider>
+            </>
+          </AuthProvider>
+        </Notistack>
       </ScrollTop>
     </Locales>
     {/* </RTLLayout> */}

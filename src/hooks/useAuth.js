@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 
 // auth provider
-import FirebaseContext from 'contexts/FirebaseContext';
+import SupabaseContext from 'contexts/SupabaseContext';
 
 // ==============================|| AUTH HOOKS ||============================== //
 
 const useAuth = () => {
-  const context = useContext(FirebaseContext);
+  const context = useContext(SupabaseContext);
 
   if (!context) throw new Error('context must be use inside provider');
 

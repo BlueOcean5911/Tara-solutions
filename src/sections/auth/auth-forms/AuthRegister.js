@@ -36,7 +36,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 // ============================|| JWT - REGISTER ||============================ //
 
 const AuthRegister = () => {
-  const { firebaseRegister } = useAuth();
+  const { supabaseRegister } = useAuth();
   const scriptedRef = useScriptRef();
   const navigate = useNavigate();
 
@@ -78,7 +78,7 @@ const AuthRegister = () => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            await firebaseRegister(values.email, values.password, values.firstname, values.lastname, values.company);
+            await supabaseRegister(values.email, values.password, values.firstname, values.lastname, values.company);
             if (scriptedRef.current) {
               setStatus({ success: true });
               setSubmitting(false);

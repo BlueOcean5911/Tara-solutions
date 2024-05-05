@@ -35,7 +35,7 @@ import { FormattedMessage } from 'react-intl';
 const AuthLogin = () => {
   const [checked, setChecked] = React.useState(false);
 
-  const { firebaseEmailPasswordSignIn } = useAuth();
+  const { supabaseEmailPasswordSignIn } = useAuth();
   const scriptedRef = useScriptRef();
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -61,18 +61,18 @@ const AuthLogin = () => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            await firebaseEmailPasswordSignIn(values.email, values.password);
+            const error = await supabaseEmailPasswordSignIn(values.email, values.password);
+            if (error) {
+              throw error;
+            }
             if (scriptedRef.current) {
               setStatus({ success: true });
               setSubmitting(false);
             }
           } catch (err) {
-            console.error(err);
-            if (scriptedRef.current) {
-              setStatus({ success: false });
-              setErrors({ submit: 'errorLogin' });
-              setSubmitting(false);
-            }
+            setStatus({ success: false });
+            setErrors({ submit: 'errorLogin' });
+            setSubmitting(false);
           }
         }}
       >

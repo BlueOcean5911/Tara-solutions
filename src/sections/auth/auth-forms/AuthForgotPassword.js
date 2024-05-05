@@ -15,7 +15,7 @@ import useScriptRef from 'hooks/useScriptRef';
 import { dispatch } from 'store';
 import { openSnackbar } from 'store/reducers/snackbar';
 
-// ============================|| FIREBASE - FORGOT PASSWORD ||============================ //
+// ============================|| Supabase - FORGOT PASSWORD ||============================ //
 
 const AuthForgotPassword = () => {
   const scriptedRef = useScriptRef();
