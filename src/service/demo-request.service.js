@@ -11,8 +11,22 @@ export async function createDemoRequest(email, firstName, lastName, company) {
 }
 
 // Read demo requests
-export async function getDemoRequests(db, email) {
+export async function checkPending(email) {
   const { data, error } = await db.from('demo-request').select('*').eq('email', email);
+  if (error) {
+    console.error('Error fetching demo requests:', error.message);
+    throw error;
+  }
+  if (data.length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Read demo requests
+export async function getDemoRequests() {
+  const { data, error } = await db.from('demo-request').select('*');
 
   if (error) {
     console.error('Error fetching demo requests:', error.message);
@@ -35,7 +49,7 @@ export async function updateDemoRequest(email, updates) {
 }
 
 // Delete a demo request
-export async function deleteDemoRequest(id) {
+export async function deleteDemoRequest(email) {
   const { data, error } = await db.from('demo-request').delete().eq('email', email).single();
 
   if (error) {

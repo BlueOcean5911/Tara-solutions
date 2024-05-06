@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useReducer, useState } from 'react';
 
-// third-party
-import { createClient } from '@supabase/supabase-js';
-
 // action - state management
 import { LOGIN, LOGOUT } from 'store/reducers/actions';
 import authReducer from 'store/reducers/auth';
@@ -12,12 +9,12 @@ import authReducer from 'store/reducers/auth';
 import Loader from 'components/Loader';
 
 // import service
-import { createDemoRequest } from 'service/demo-request.service';
-import { findUserByEmail } from 'service/users.service';
+import { createDemoRequest, checkPending } from 'service/demo-request.service';
 import { enqueueSnackbar } from 'notistack';
 
 // supabase initialize
 import { supabase } from 'service/supabaseClient';
+import { checkUser } from 'service/users.service';
 
 // const
 const initialState = {
@@ -37,9 +34,17 @@ export const SupabaseProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       if (authUser) {
-        const isUser = await findUserByEmail(supabase, authUser.email);
-        if (isUser === null) {
+        const pending = await checkPending(authUser.email);
+        const isUser = await checkUser(authUser.email);
+        if (pending) {
           enqueueSnackbar('Now your request is pending...', { variant: 'warning' });
+          dispatch({
+            type: LOGOUT
+          });
+          return;
+        }
+        if (!isUser) {
+          enqueueSnackbar('Your account has been suspended', { variant: 'error' });
           dispatch({
             type: LOGOUT
           });
@@ -102,7 +107,10 @@ export const SupabaseProvider = ({ children }) => {
     }
   };
 
-  const logout = () => supabase.auth.signOut();
+  const logout = async () => {
+    setAuthUser(null);
+    await supabase.auth.signOut();
+  };
 
   const resetPassword = async (email) => {
     await supabase.auth.resetPasswordForEmail(email);

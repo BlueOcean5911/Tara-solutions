@@ -1,159 +1,202 @@
+import PropTypes from 'prop-types';
+import { useEffect, useMemo, useState } from 'react';
+
 // material-ui
-import { Box, Button, Grid, Modal, Typography } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { Box, Chip, Grid, Stack, Table, TableBody, TableCell, TableHead, TableRow, Tooltip, IconButton } from '@mui/material';
+
+// third-party
+import { useTable, useFilters, usePagination, useRowSelect } from 'react-table';
+
 // project import
 import MainCard from 'components/MainCard';
-import { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
-import uploadFilesService from 'service/upload-files.service';
+import ScrollX from 'components/ScrollX';
+import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
+import { CSVExport, TablePagination } from 'components/third-party/ReactTable';
+import { deleteDemoRequest, getDemoRequests } from 'service/demo-request.service';
+import { UserAddOutlined } from '@ant-design/icons';
+import { createUser } from 'service/users.service';
 
-// ==============================|| SAMPLE PAGE ||============================== //
+// ==============================|| REACT TABLE ||============================== //
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #888',
-  borderRadius: '1rem',
-  boxShadow: 24,
-  p: 4
+const ColumnCell = ({ row }) => (
+  <>
+    <Stack direction="row" alignItems="center" justifyContent="start" spacing={0}>
+      <Tooltip title={'Add'}>
+        <IconButton
+          color={'primary'}
+          onClick={() => {
+            createUser(row.values.email, row.values.first_name, row.values.last_name, row.values.company);
+            deleteDemoRequest(row.values.email);
+          }}
+        >
+          <UserAddOutlined />
+        </IconButton>
+      </Tooltip>
+    </Stack>
+  </>
+);
+
+ColumnCell.propTypes = {
+  row: PropTypes.object,
+  setEditableRowIndex: PropTypes.func,
+  editableRowIndex: PropTypes.number
 };
 
-const PredictStudentPerformance = () => {
-  const [studentData, setStudentData] = useState({
-    dayStuded: 0,
-    activityEngaged: 0,
-    totalClicks: 0,
-    assessmentCompleted: 0,
-    assessmentAverageScore: 0
+function ReactTable({ columns, data, top }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    page,
+    prepareRow,
+    gotoPage,
+    setPageSize,
+    state: { pageIndex, pageSize }
+  } = useTable(
+    {
+      columns,
+      data,
+      initialState: { pageIndex: 0, pageSize: 10 }
+    },
+    useFilters,
+    usePagination,
+    useRowSelect,
+    (hooks) => {
+      hooks.allColumns.push((columns) => [
+        ...columns,
+        {
+          accessor: 'edit',
+          id: 'edit',
+          Header: 'add',
+          Cell: ColumnCell
+        }
+      ]);
+    }
+  );
+
+  return (
+    <Stack>
+      {top && (
+        <Box sx={{ p: 2 }}>
+          <TablePagination gotoPage={gotoPage} rows={rows} setPageSize={setPageSize} pageIndex={pageIndex} pageSize={pageSize} />
+        </Box>
+      )}
+
+      <Table {...getTableProps()}>
+        <TableHead sx={{ borderTopWidth: top ? 2 : 1 }}>
+          {headerGroups.map((headerGroup, index) => (
+            <TableRow key={index} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, i) => (
+                <TableCell key={i} {...column.getHeaderProps([{ className: column.className }])}>
+                  {column.render('Header')}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableHead>
+        <TableBody {...getTableBodyProps()}>
+          {page.map((row, i) => {
+            prepareRow(row);
+            return (
+              <TableRow key={i} {...row.getRowProps()}>
+                {row.cells.map((cell, index) => (
+                  <TableCell key={index} {...cell.getCellProps([{ className: cell.column.className }])}>
+                    {cell.render('Cell')}
+                  </TableCell>
+                ))}
+              </TableRow>
+            );
+          })}
+
+          {!top && (
+            <TableRow>
+              <TableCell sx={{ p: 2 }} colSpan={7}>
+                <TablePagination gotoPage={gotoPage} rows={rows} setPageSize={setPageSize} pageIndex={pageIndex} pageSize={pageSize} />
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+    </Stack>
+  );
+}
+
+ReactTable.propTypes = {
+  columns: PropTypes.array,
+  data: PropTypes.array,
+  top: PropTypes.bool
+};
+
+// ==============================|| REACT TABLE - PAGINATION ||============================== //
+
+const StatusCell = ({ value }) => {
+  switch (value) {
+    case 'Complicated':
+      return <Chip color="error" label="Complicated" size="small" variant="light" />;
+    case 'Relationship':
+      return <Chip color="success" label="Relationship" size="small" variant="light" />;
+    case 'Single':
+    default:
+      return <Chip color="info" label="Single" size="small" variant="light" />;
+  }
+};
+
+StatusCell.propTypes = {
+  value: PropTypes.string
+};
+
+const ProgressCell = ({ value }) => <LinearWithLabel value={value} sx={{ minWidth: 75 }} />;
+
+ProgressCell.propTypes = {
+  value: PropTypes.number
+};
+
+const DemoRequest = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchDemoRequest();
   });
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const [messageID, setMessageID] = useState('');
-  const predict = () => {
-    uploadFilesService
-      .predict(studentData)
-      .then((response) => {
-        if (response.data.status_code === 200) {
-          if (response.data.result === 1) {
-            setMessageID('predictMessage1');
-          } else {
-            setMessageID('predictMessage2');
-          }
-          handleOpen();
-        } else {
-          setMessageID('serverError');
-        }
-      })
-      .catch((e) => {
-        setMessageID('networkError');
-        handleOpen();
-        console.log(e);
-      });
+  const fetchDemoRequest = async () => {
+    const demoRequests = await getDemoRequests();
+    setData(demoRequests);
   };
+
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'First Name',
+        accessor: 'first_name'
+      },
+      {
+        Header: 'Last Name',
+        accessor: 'last_name'
+      },
+      {
+        Header: 'Email',
+        accessor: 'email'
+      },
+      {
+        Header: 'Company',
+        accessor: 'company'
+      }
+    ],
+    []
+  );
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} lg={12}>
-        <MainCard>
-          <Grid container xs={12} lg={12}>
-            <Grid item xs={12} lg={6}>
-              <img src="/asset/image/analytics-001.jpg" alt="Analytics" style={{ width: '100%', height: '100%' }} />
-            </Grid>
-            <Grid item xs={12} lg={6}>
-              <Box
-                width={'100%'}
-                height={'100%'}
-                sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
-              >
-                <Typography variant="h2" color={'grey'} marginY={'1rem'}>
-                  <FormattedMessage id="predictStuPerf" />
-                </Typography>
-                <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
-                  <FormattedMessage id="predictStuPerfDisp" />
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
+      <Grid item xs={12}>
+        <MainCard title="Demo Request" content={false} secondary={<CSVExport data={data} filename={'pagination-top-table.csv'} />}>
+          <ScrollX>
+            <ReactTable columns={columns} data={data} top />
+          </ScrollX>
         </MainCard>
       </Grid>
-      <Grid item xs={12} lg={12}>
-        <MainCard
-          title="Predict student performance"
-          sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}
-        >
-          <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }} gap={4}>
-              <TextField
-                id="day_studied"
-                label={<FormattedMessage id="dayStudied" />}
-                variant="outlined"
-                type="number"
-                defaultValue={0}
-                value={studentData.dayStuded}
-                onChange={(e) => setStudentData({ ...studentData, dayStuded: e.target.value })}
-              />
-              <TextField
-                id="activities_engaged"
-                label={<FormattedMessage id="activityEngagement" />}
-                variant="outlined"
-                type="number"
-                defaultValue={0}
-                value={studentData.activityEngaged}
-                onChange={(e) => setStudentData({ ...studentData, activityEngaged: e.target.value })}
-              />
-              <TextField
-                id="total_clicks"
-                label={<FormattedMessage id="totalClicks" />}
-                variant="outlined"
-                type="number"
-                defaultValue={0}
-                value={studentData.totalClicks}
-                onChange={(e) => setStudentData({ ...studentData, totalClicks: e.target.value })}
-              />
-              <TextField
-                id="assessments_completed"
-                label={<FormattedMessage id="assessCompletedRate" />}
-                variant="outlined"
-                type="number"
-                defaultValue={0}
-                value={studentData.assessmentCompleted}
-                onChange={(e) => setStudentData({ ...studentData, assessmentCompleted: e.target.value })}
-              />
-              <TextField
-                id="average_assessment_score"
-                label={<FormattedMessage id="averageAssessmentScore" />}
-                variant="outlined"
-                type="number"
-                defaultValue={0}
-                value={studentData.assessmentAverageScore}
-                onChange={(e) => setStudentData({ ...studentData, assessmentAverageScore: e.target.value })}
-              />
-              <Button variant="contained" sx={{ backgroundColor: '#043262' }} onClick={() => predict()}>
-                <FormattedMessage id="predict" />
-              </Button>
-            </Box>
-          </Box>
-        </MainCard>
-      </Grid>
-      <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h3" component="h2">
-            <FormattedMessage id="predictedResult" />
-          </Typography>
-          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
-            <FormattedMessage id={messageID} />
-          </Typography>
-        </Box>
-      </Modal>
     </Grid>
   );
 };
 
-export default PredictStudentPerformance;
+export default DemoRequest;

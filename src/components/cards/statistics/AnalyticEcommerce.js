@@ -55,12 +55,12 @@ const AnalyticEcommerce = ({ color = 'primary', title, count, percentage, isLoss
 );
 
 AnalyticEcommerce.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.object,
   count: PropTypes.string,
   percentage: PropTypes.number,
   isLoss: PropTypes.bool,
   color: PropTypes.string,
-  extra: PropTypes.string
+  extra: PropTypes.object
 };
 
 export default AnalyticEcommerce;
