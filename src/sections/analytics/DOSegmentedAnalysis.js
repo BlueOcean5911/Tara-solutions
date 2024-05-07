@@ -93,8 +93,8 @@ ReactTable.propTypes = {
 
 const StatusCell = ({ value }) => {
   switch (value) {
-    case 'Retention':
-      return <Chip color="success" label="Retention" size="small" variant="light" />;
+    case 'Active':
+      return <Chip color="success" label="Active" size="small" variant="light" />;
     case 'Drop Out':
       return <Chip color="error" label="Failed" size="small" variant="light" />;
     case 'Single':

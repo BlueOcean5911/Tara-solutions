@@ -51,7 +51,7 @@ const DropOutAnalysis = () => {
         <MainCard>
           <Grid container xs={12} lg={12}>
             <Grid item xs={12} lg={6}>
-              <img src="/asset/image/analytics-002.jpg" alt="Analytics" style={{ width: '100%', height: '100%', minHeight: '300px' }} />
+              <img src="/asset/image/analytics-003.jpg" alt="Analytics" style={{ width: '100%', height: '100%', minHeight: '300px' }} />
             </Grid>
             <Grid item xs={12} lg={6}>
               <Box

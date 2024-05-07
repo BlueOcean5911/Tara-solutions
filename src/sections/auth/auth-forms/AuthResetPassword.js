@@ -38,7 +38,7 @@ const AuthResetPassword = () => {
   const scriptedRef = useScriptRef();
   const navigate = useNavigate();
 
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, updatePassword } = useAuth();
 
   const [level, setLevel] = useState();
   const [showPassword, setShowPassword] = useState(false);
@@ -74,7 +74,7 @@ const AuthResetPassword = () => {
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
         try {
-          await resetPassword(values.email).then(
+          await updatePassword(values.password).then(
             () => {
               setStatus({ success: true });
               setSubmitting(false);
@@ -92,11 +92,6 @@ const AuthResetPassword = () => {
               setTimeout(() => {
                 navigate(isLoggedIn ? '/auth/login' : '/login', { replace: true });
               }, 1500);
-
-              // WARNING: do not set any formik state here as formik might be already destroyed here. You may get following error by doing so.
-              // Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
-              // To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-              // github issue: https://github.com/formium/formik/issues/2430
             },
             (err) => {
               setStatus({ success: false });

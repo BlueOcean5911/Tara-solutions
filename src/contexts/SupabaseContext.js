@@ -120,6 +120,12 @@ export const SupabaseProvider = ({ children }) => {
     });
   };
 
+  const updatePassword = async (password) => {
+    await supabase.auth.updateUser({
+      password
+    });
+  };
+
   const updateProfile = () => {};
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;
@@ -134,6 +140,7 @@ export const SupabaseProvider = ({ children }) => {
         login: () => {},
         logout,
         resetPassword,
+        updatePassword,
         updateProfile
       }}
     >
