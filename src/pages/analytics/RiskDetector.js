@@ -3,6 +3,7 @@ import { Box, Button, Grid, Modal, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 // project import
 import MainCard from 'components/MainCard';
+import ApexChart from 'components/third-party/RadialBarChart';
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import uploadFilesService from 'service/upload-files.service';
@@ -22,14 +23,17 @@ const style = {
   p: 4
 };
 
-const PredictStudentPerformance = () => {
+const RiskDetector = () => {
   const [studentData, setStudentData] = useState({
+    country: 'Costa Rica',
     dayStuded: 0,
     activityEngaged: 0,
     totalClicks: 0,
     assessmentCompleted: 0,
     assessmentAverageScore: 0
   });
+
+  const [riskLevel, setRiskLevel] = useState(0);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -41,11 +45,12 @@ const PredictStudentPerformance = () => {
       .predict(studentData)
       .then((response) => {
         if (response.data.status_code === 200) {
-          if (response.data.result === 1) {
+          if (response.data.result < 0.5) {
             setMessageID('predictMessage1');
           } else {
             setMessageID('predictMessage2');
           }
+          setRiskLevel(parseInt(response.data.result * 100));
           handleOpen();
         } else {
           setMessageID('serverError');
@@ -90,6 +95,15 @@ const PredictStudentPerformance = () => {
         >
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }} gap={4}>
+              <TextField
+                id="country"
+                label={<FormattedMessage id="country" />}
+                variant="outlined"
+                type="text"
+                defaultValue={'Costa Rica'}
+                value={studentData.country}
+                onChange={(e) => setStudentData({ ...studentData, country: e.target.value })}
+              />
               <TextField
                 id="day_studied"
                 label={<FormattedMessage id="dayStudied" />}
@@ -145,10 +159,24 @@ const PredictStudentPerformance = () => {
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h3" component="h2">
-            <FormattedMessage id="predictedResult" />
+            <FormattedMessage id="riskLevel" />
           </Typography>
           <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
-            <FormattedMessage id={messageID} />
+            {messageID !== 'serverError' ? (
+              <>
+                {/* <ApexChart value={riskLevel} /> */}
+                <ApexChart value={riskLevel} />
+                <Typography id="modal-modal-description" textAlign={'center'} variant="h5" sx={{ mt: 2 }}>
+                  <FormattedMessage id={messageID} />
+                </Typography>
+              </>
+            ) : (
+              <>
+                <Typography id="modal-modal-description" textAlign={'center'} variant="h5" sx={{ mt: 2 }}>
+                  <FormattedMessage id={messageID} />
+                </Typography>
+              </>
+            )}
           </Typography>
         </Box>
       </Modal>
@@ -156,4 +184,4 @@ const PredictStudentPerformance = () => {
   );
 };
 
-export default PredictStudentPerformance;
+export default RiskDetector;

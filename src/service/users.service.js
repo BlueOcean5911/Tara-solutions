@@ -20,17 +20,17 @@ export async function findUserByEmail(email) {
 
 export async function checkUser(email) {
   try {
-    const { data, error } = await supabase.from('users').select('*').eq('email', email);
+    const { data, error } = await supabase.from('users').select('*').eq('email', email).single();
 
     if (error) {
       console.error('Error findUserByEmail:', error.message);
       return null;
     }
 
-    if (data.length > 0) {
-      return true;
+    if (data) {
+      return data;
     } else {
-      return false;
+      return null;
     }
   } catch {
     return null;

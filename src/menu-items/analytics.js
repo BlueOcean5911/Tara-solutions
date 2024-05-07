@@ -2,10 +2,10 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { BarChartOutlined, StockOutlined } from '@ant-design/icons';
+import { BarChartOutlined, StockOutlined, RiseOutlined, PieChartOutlined } from '@ant-design/icons';
 
 // icons
-const icons = { BarChartOutlined, StockOutlined };
+const icons = { BarChartOutlined, StockOutlined, RiseOutlined, PieChartOutlined };
 
 // ==============================|| MENU ITEMS - SUPPORT ||============================== //
 
@@ -15,18 +15,32 @@ const analytics = {
   type: 'group',
   children: [
     {
-      id: 'analytics-predict',
-      title: <FormattedMessage id="analyticsPredict" />,
+      id: 'risk-detector',
+      title: <FormattedMessage id="riskDetector" />,
       type: 'item',
-      url: '/analytics/predict',
+      url: '/analytics/risk-detector',
       icon: icons.StockOutlined
     },
     {
-      id: 'analytics-',
-      title: <FormattedMessage id="comprehensiveAnalytics" />,
+      id: 'student-performance',
+      title: <FormattedMessage id="studentPerformance" />,
       type: 'item',
-      url: '/analytics/comprehensive-analysis',
+      url: '/analytics/student-performance',
       icon: icons.BarChartOutlined
+    },
+    {
+      id: 'drop-out',
+      title: <FormattedMessage id="dropOutAnalysis" />,
+      type: 'item',
+      url: '/analytics/drop-out',
+      icon: icons.RiseOutlined
+    },
+    {
+      id: 'retention',
+      title: <FormattedMessage id="retention" />,
+      type: 'item',
+      url: '/analytics/retention',
+      icon: icons.PieChartOutlined
     }
   ]
 };

@@ -11,6 +11,7 @@ import useConfig from 'hooks/useConfig';
 // project import
 import NavGroup from './NavGroup';
 import menuItem from 'menu-items';
+import useAuth from 'hooks/useAuth';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
 
@@ -25,8 +26,28 @@ const Navigation = () => {
   const [selectedLevel, setSelectedLevel] = useState(0);
   const [menuItems, setMenuItems] = useState({ items: [] });
 
+  const { user } = useAuth();
+
   useLayoutEffect(() => {
-    setMenuItems(menuItem);
+    if (user) {
+      if (user.role === 'admin' || user.role === 'owner') {
+        setMenuItems(menuItem);
+      } else {
+        setMenuItems({
+          items: menuItem.items.filter((item) => item.id !== 'admin')
+        });
+        if (user.role === 'demo') {
+          menuItem.items.map((item) => {
+            if (item.id === 'analytics') {
+              item.children = item.children.map((child) => {
+                return { ...child, disabled: true };
+              });
+            }
+            return item;
+          });
+        }
+      }
+    }
     // eslint-disable-next-line
   }, [menuItem]);
 

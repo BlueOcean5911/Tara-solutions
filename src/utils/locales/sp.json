@@ -62,16 +62,14 @@
   "completedRateOnCourse": "Tasa de finalización del curso",
   "analytics": "Analítica",
   "analyticsPredict": "Predicción analítica",
-  "comprehensiveAnalytics": "Análisis integral",
+  "studentPerformance": "Rendimiento estudiantil",
   "predictStuPerf": "Predecir el desempeño de los estudiantes",
   "predictStuPerfDisp": "Predecir el desempeño de los estudiantes en un Sistema de Gestión del Aprendizaje (LMS) en línea es una capacidad innovadora que permite a los educadores e instituciones identificar y apoyar proactivamente a los estudiantes en riesgo, al mismo tiempo que permite a los estudiantes de alto rendimiento sobresalir aún más. Al aprovechar el análisis de datos avanzado y los algoritmos de aprendizaje automático, este enfoque innovador proporciona una descripción general completa de la participación, el progreso y el éxito potencial de los estudiantes dentro del entorno del curso en línea",
-  "dayStudied": "Día estudiado",
-  "activityEngagement": "Participación en la actividad",
-  "totalClicks": "Total de clics",
+
   "assessCompletedRate": "Tasa de evaluación completada (%)",
   "averageAssessmentScore": "Puntuación de evaluación promedio",
   "predict": "Predecir",
-  "predictedResult": "Resultado previsto",
+  "riskLevel": "Nivel de riesgo",
 
   "comprehensiveLMSAnalytics": "Análisis integral de LMS",
   "comprehensiveLMSAnalyticsDisp": "La obtención de análisis integrales sobre el desempeño de los estudiantes, los puntajes de las evaluaciones y los datos de los cursos desbloquea una gran cantidad de conocimientos que se pueden aprovechar para mejorar significativamente los resultados de los estudiantes. Al analizar estos datos de manera efectiva, los educadores pueden identificar áreas de mejora, personalizar las experiencias de aprendizaje y, en última instancia, fomentar un entorno de aprendizaje más exitoso para todos los estudiantes",
@@ -91,5 +89,18 @@
 
   "admin": "Administrador",
   "users": "Usuarios",
-  "demoRequest": "Solicitud de demostración"
+  "demoRequest": "Solicitud de demostración",
+
+  "riskDector": "Risk Detector",
+
+  "retention": "Análisis de retención",
+  "dropOut": "Análisis de abandono",
+
+  "country": "País",
+  "previousGrade": "Grado anterior (10)",
+  "attendanceRate": "Tasa de asistencia(%)",
+  "studiedTime": "Tiempo estudiado Semanal",
+
+  "accessCount": "Conteo de acceso a recursos",
+  "courseCompleteRate": "Tasa de finalización del curso (%)"
 }

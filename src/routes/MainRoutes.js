@@ -5,7 +5,6 @@ import MainLayout from 'layout/MainLayout';
 import CommonLayout from 'layout/CommonLayout';
 import Loadable from 'components/Loadable';
 import AuthGuard from 'utils/route-guard/AuthGuard';
-import { element } from 'prop-types';
 
 // pages routing
 const MaintenanceError = Loadable(lazy(() => import('pages/maintenance/404')));
@@ -15,8 +14,10 @@ const MaintenanceComingSoon = Loadable(lazy(() => import('pages/maintenance/comi
 
 // render - sample page
 const Dashboard = Loadable(lazy(() => import('pages/dashboard/dashboard')));
-const PredictStudentPerformance = Loadable(lazy(() => import('pages/analytics/PredictStudentPerformance')));
-const ComprehensiveAnalysis = Loadable(lazy(() => import('pages/analytics/ComprehensiveAnalysis')));
+const PredictStudentPerformance = Loadable(lazy(() => import('pages/analytics/RiskDetector')));
+const ComprehensiveAnalysis = Loadable(lazy(() => import('pages/analytics/StudentPerformance')));
+const DropOutAnalysis = Loadable(lazy(() => import('pages/analytics/DropOutAnalysis')));
+const RetentionAnalysis = Loadable(lazy(() => import('pages/analytics/RetentionAnalysis')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -39,12 +40,20 @@ const MainRoutes = {
           path: 'analytics',
           children: [
             {
-              path: 'predict',
+              path: 'risk-detector',
               element: <PredictStudentPerformance />
             },
             {
-              path: 'comprehensive-analysis',
+              path: 'student-performance',
               element: <ComprehensiveAnalysis />
+            },
+            {
+              path: 'drop-out',
+              element: <DropOutAnalysis />
+            },
+            {
+              path: 'retention',
+              element: <RetentionAnalysis />
             }
           ]
         }

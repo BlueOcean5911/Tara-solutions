@@ -1,12 +1,25 @@
 import http from '../http-common';
 
 class UploadFilesService {
-  upload(file, onUploadProgress) {
+  stu_perf_anaylsis(file, onUploadProgress) {
     let formData = new FormData();
 
     formData.append('file', file);
 
-    return http.post('/analysis/comprehension-performance', formData, {
+    return http.post('/analysis/stu-perf-analysis', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      onUploadProgress
+    });
+  }
+
+  drop_out_analysis(file, onUploadProgress) {
+    let formData = new FormData();
+
+    formData.append('file', file);
+
+    return http.post('/analysis/drop-out-analysis', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       },

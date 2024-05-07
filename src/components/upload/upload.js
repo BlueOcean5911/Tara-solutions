@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
 import { FormattedMessage } from 'react-intl';
 import UploadService from 'service/upload-files.service';
+import PropTypes from 'prop-types';
 
 const style = {
   position: 'absolute',
@@ -17,7 +18,7 @@ const style = {
   p: 4
 };
 
-const UploadFiles = ({ setData }) => {
+const UploadFiles = ({ setAnalysisData, setStudentData, type = 'stu-perf-analysis' }) => {
   const [selectedFiles, setSelectedFiles] = useState(undefined);
   const [currentFile, setCurrentFile] = useState(undefined);
   const [progress, setProgress] = useState(0);
@@ -29,21 +30,43 @@ const UploadFiles = ({ setData }) => {
     setProgress(0);
     setCurrentFile(currentFile);
 
-    UploadService.upload(currentFile, (event) => {
-      setProgress(Math.round((100 * event.loaded) / event.total));
-    })
-      .then((response) => {
-        console.log(JSON.parse(response.data.result));
-        setData(JSON.parse(response.data.result));
+    if (type === 'stu-perf-analysis') {
+      UploadService.stu_perf_anaylsis(currentFile, (event) => {
+        setProgress(Math.round((100 * event.loaded) / event.total));
       })
-      .catch((e) => {
-        console.log(e);
-        setProgress(0);
-        // Todo: show the modal
-        setMessageId('warningMessage1');
-        handleOpen();
-        setCurrentFile(undefined);
-      });
+        .then((response) => {
+          console.log(JSON.parse(response.data.result));
+          const result = JSON.parse(response.data.result);
+          setAnalysisData(result.analysis_result);
+          setStudentData(result.student_data);
+        })
+        .catch((e) => {
+          console.log(e);
+          setProgress(0);
+          // Todo: show the modal
+          setMessageId('warningMessage1');
+          handleOpen();
+          setCurrentFile(undefined);
+        });
+    } else if (type === 'drop-out-analysis') {
+      UploadService.drop_out_analysis(currentFile, (event) => {
+        setProgress(Math.round((100 * event.loaded) / event.total));
+      })
+        .then((response) => {
+          console.log(JSON.parse(response.data.result));
+          const result = JSON.parse(response.data.result);
+          setAnalysisData(result.analysis_result);
+          setStudentData(result.student_data);
+        })
+        .catch((e) => {
+          console.log(e);
+          setProgress(0);
+          // Todo: show the modal
+          setMessageId('warningMessage1');
+          handleOpen();
+          setCurrentFile(undefined);
+        });
+    }
 
     setSelectedFiles(undefined);
   };
@@ -113,6 +136,12 @@ const UploadFiles = ({ setData }) => {
       </Modal>
     </div>
   );
+};
+
+UploadFiles.propTypes = {
+  setAnalysisData: PropTypes.func.isRequired,
+  setStudentData: PropTypes.func,
+  type: PropTypes.string
 };
 
 export default UploadFiles;

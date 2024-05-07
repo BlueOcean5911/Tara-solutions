@@ -35,7 +35,7 @@ export const SupabaseProvider = ({ children }) => {
     const fetchUserData = async () => {
       if (authUser) {
         const pending = await checkPending(authUser.email);
-        const isUser = await checkUser(authUser.email);
+        const user = await checkUser(authUser.email);
         if (pending) {
           enqueueSnackbar('Now your request is pending...', { variant: 'warning' });
           dispatch({
@@ -43,7 +43,8 @@ export const SupabaseProvider = ({ children }) => {
           });
           return;
         }
-        if (!isUser) {
+        console.log(user, 'user infor');
+        if (!user) {
           enqueueSnackbar('Your account has been suspended', { variant: 'error' });
           dispatch({
             type: LOGOUT
@@ -57,7 +58,8 @@ export const SupabaseProvider = ({ children }) => {
             user: {
               id: authUser.id,
               email: authUser.email,
-              name: authUser.user_metadata.name
+              name: authUser.user_metadata.name,
+              role: user.role
             }
           }
         });

@@ -48,16 +48,19 @@
   "engagementAverage": "Engagement Average",
   "engagementAverageDisp": "Engagement Average Over Total Course",
   "predictedStudentPerformance": "Student Performance",
-
   "distinct": "Distinct",
   "pass": "Pass",
   "fail": "Fail",
   "withdrawn": "Withdrawn",
 
   "predictedStuPerfOnGender": "Student Performance on Gender",
+  "predictedDOOnGender": "Drop Out on Gender",
   "predStuPerfOnAge": "Student Performance on Age",
+  "predDOOnAge": "Drop Out on Age",
   "predStuPerfOnCourse": "Student Performance on Course",
+  "predDOOnCourse": "Drop Out on Course",
   "predStuPerfOnQualification": "Student Performance on Qualification",
+  "predDOOnQualification": "Drop Out on Qualification",
 
   "qualALevel": "A Level of Equivalent",
   "qualHEQualification": "He Qualification",
@@ -73,21 +76,19 @@
 
   "analytics": "Analytics",
   "analyticsPredict": "Analytics Predict",
-  "comprehensiveAnalytics": "Comprehensive Analytics",
+  "studentPerformance": "Student Performance",
+  "studentPerformanceAnalysis": "Student Performance Analysis",
 
-  "predictStuPerf": "Predict Student Performance",
-  "predictStuPerfDisp": "Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers educators and institutions to proactively identify and support students at risk, while also enabling high-achieving students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach provides a comprehensive overview of student engagement, progress, and potential success within the online course environment.",
-
-  "dayStudied": "Day Studied",
-  "activityEngagement": "Activity Engagement",
-  "totalClicks": "Total Clicks",
+  "studiedTime": "Studied Time Weekly",
+  "accessCount": "Access Count to Resources",
   "assessCompletedRate": "Assessemnt Completed Rate(%)",
-  "averageAssessmentScore": "Average Assessment Score",
+  "averageAssessmentScore": "Average Assessment Score(10)",
   "predict": "Predict",
-  "predictedResult": "Predicted Result",
+  "riskLevel": "Risk Level",
+  "courseCompleteRate": "Course Completion Rate(%)",
+  "attendanceRate": "Attendance Rate(%)",
 
-  "comprehensiveLMSAnalytics": "Comprehensive LMS Analytics",
-  "comprehensiveLMSAnalyticsDisp": "Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning environment for all students.",
+  "studentPerformanceDisp": "Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning environment for all students.",
 
   "compEduPerfMetrics": "Comprehensive Educational Performance Metrics",
 
@@ -108,5 +109,19 @@
 
   "admin": "Administrator",
   "users": "Users",
-  "demoRequest": "Demo Request"
+  "demoRequest": "Demo Request",
+
+  "riskDetector": "Risk Detector",
+  
+  "riskDetectorDisp": "Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers educators and institutions to proactively identify and support students at risk, while also enabling high-achieving students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach provides a comprehensive overview of student engagement, progress, and potential success within the online course environment.",
+
+  "retention": "Retention Analysis",
+  "dropOutAnalysis": "Drop Out Analysis",
+
+  "previousGrade": "Previous Grade(10)",
+  "mentalHealth": "Mental Health",
+
+  "country": "Country",
+
+  "dropOut":  "Drop Out"
 }
