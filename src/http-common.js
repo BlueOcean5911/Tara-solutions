@@ -1,8 +1,17 @@
 import axios from 'axios';
 
-export default axios.create({
-  baseURL: 'https://edee-83-234-227-29.ngrok-free.app',
-  headers: {
-    'Content-type': 'application/json'
+const axiosServices = axios.create({ baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/' });
+
+// ==============================|| AXIOS - FOR MOCK SERVICES ||============================== //
+
+axiosServices.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response.status === 401 && !window.location.href.includes('/login')) {
+      window.location = '/login';
+    }
+    return Promise.reject((error.response && error.response.data) || 'Wrong Services');
   }
-});
+);
+
+export default axiosServices;
