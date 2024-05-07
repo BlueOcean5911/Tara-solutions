@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // material-ui
 import { Box } from '@mui/material';
@@ -6,15 +6,14 @@ import { Box } from '@mui/material';
 // third-party
 import ReactApexChart from 'react-apexcharts';
 
-// project import
+import PropTypes from 'prop-types';
 
 // chart options
 const pieChartOptions = {
   chart: {
     type: 'donut'
   },
-  labels: ['Distinct', 'Pass', 'Fail', 'Withdrawn'],
-  colors: ['#47d147', '#0099ff', '#ff4d4d', '#660000'],
+  // colors: ['#2ecc71', '#b03060', '#00b7eb', '#ff6b6b'],
   responsive: [
     {
       breakpoint: 480,
@@ -35,7 +34,7 @@ const pieChartOptions = {
 const FinalResult = ({ series = [44, 55, 41, 17], labels = ['Distinct', 'Pass', 'Fail', 'Withdrawn'] }) => {
   const [series_data] = useState(series);
 
-  const [options, setOptions] = useState({...pieChartOptions, labels: labels });
+  const [options, setOptions] = useState({ ...pieChartOptions, labels: labels });
 
   return (
     <Box id="chart" sx={{ bgcolor: 'transparent' }}>
@@ -43,6 +42,11 @@ const FinalResult = ({ series = [44, 55, 41, 17], labels = ['Distinct', 'Pass', 
       <ReactApexChart options={options} series={series_data} type="donut" />
     </Box>
   );
+};
+
+FinalResult.propTypes = {
+  series: PropTypes.array,
+  labels: PropTypes.array
 };
 
 export default FinalResult;

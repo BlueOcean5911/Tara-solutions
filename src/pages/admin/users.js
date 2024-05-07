@@ -26,6 +26,7 @@ import { CSVExport, TablePagination } from 'components/third-party/ReactTable';
 // assets
 import { CheckOutlined, UserDeleteOutlined } from '@ant-design/icons';
 import { deleteUser, getUsers, updateUser } from 'service/users.service';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -47,7 +48,7 @@ const style = {
 const ColumnCell = ({ row, deleteRowByEmail }) => (
   <>
     <Stack direction="row" alignItems="center" justifyContent="start" spacing={0}>
-      <Tooltip title={'Delete user'}>
+      <Tooltip title={<FormattedMessage id="deleteUser" />}>
         <span>
           <IconButton
             disabled={row.values.role === 'owner'}
@@ -97,7 +98,7 @@ function ReactTable({ columns, data, top, updateData, skipPageReset, deleteRowBy
       updateData,
       deleteRowByEmail,
       data,
-      getSubRows: (row) => {},
+      getSubRows: (row) => { },
       initialState: { pageIndex: 0, pageSize: 10 }
     },
     useFilters,
@@ -108,7 +109,7 @@ function ReactTable({ columns, data, top, updateData, skipPageReset, deleteRowBy
         {
           accessor: 'edit',
           id: 'edit',
-          Header: 'delete',
+          Header: <FormattedMessage id="delete" />,
           Cell: ColumnCell
         }
       ]);
@@ -223,7 +224,7 @@ const CellEdit = ({ value: initialValue, row: { index }, column: { id, dataType 
             }}
             enableReinitialize
             validationSchema={userInfoSchema}
-            onSubmit={() => {}}
+            onSubmit={() => { }}
           >
             {({ values, handleChange, handleBlur, errors, touched }) => (
               <Form>
@@ -307,27 +308,27 @@ const Users = () => {
   const columns = useMemo(
     () => [
       {
-        Header: 'First Name',
+        Header: <FormattedMessage id="firstname" />,
         accessor: 'first_name',
         dataType: 'text'
       },
       {
-        Header: 'Last Name',
+        Header: <FormattedMessage id="lastname" />,
         accessor: 'last_name',
         dataType: 'text'
       },
       {
-        Header: 'Email',
+        Header: <FormattedMessage id="email" />,
         accessor: 'email',
         dataType: 'text'
       },
       {
-        Header: 'Company',
+        Header: <FormattedMessage id="company" />,
         accessor: 'company',
         dataType: 'text'
       },
       {
-        Header: 'Role',
+        Header: <FormattedMessage id="role" />,
         accessor: 'role',
         dataType: 'select'
       }
@@ -374,18 +375,16 @@ const Users = () => {
       </Grid>
       <Grid item xs={12} lg={12}>
         <MainCard>
-          <Grid container xs={12}>
-            <ScrollX>
-              <ReactTable
-                columns={columns}
-                data={data}
-                updateData={updateData}
-                skipPageReset={skipPageReset}
-                deleteRowByEmail={deleteRowByEmail}
-                top
-              />
-            </ScrollX>
-          </Grid>
+          <ScrollX>
+            <ReactTable
+              columns={columns}
+              data={data}
+              updateData={updateData}
+              skipPageReset={skipPageReset}
+              deleteRowByEmail={deleteRowByEmail}
+              top
+            />
+          </ScrollX>
         </MainCard>
       </Grid>
     </Grid>

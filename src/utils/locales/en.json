@@ -38,6 +38,7 @@
   "getStarted": "Get Started",
 
   "dashboard": "Dashboard",
+
   "dashboardTitle1": "Comprehensive Educational Performance Metrics",
   "totalStudents": "Total Students",
   "activeUsers": "Active Users",
@@ -53,20 +54,41 @@
   "fail": "Fail",
   "withdrawn": "Withdrawn",
 
-  "predictedStuPerfOnGender": "Student Performance on Gender",
-  "predictedDOOnGender": "Drop Out on Gender",
-  "predStuPerfOnAge": "Student Performance on Age",
-  "predDOOnAge": "Drop Out on Age",
-  "predStuPerfOnCourse": "Student Performance on Course",
-  "predDOOnCourse": "Drop Out on Course",
-  "predStuPerfOnQualification": "Student Performance on Qualification",
-  "predDOOnQualification": "Drop Out on Qualification",
+  "analytics": "Analytics",
 
-  "qualALevel": "A Level of Equivalent",
-  "qualHEQualification": "He Qualification",
-  "qualLowerThanLevel": "Lower Than A Level",
-  "qualNoFormatQuals": "No Formal Quals",
-  "qualPostGraduageQualifiction": "Post Graduage Qualification",
+  "riskDectection": "Risk Detection",
+
+  "riskDetectorTitle": "Risk Detection Analysis",
+  "riskDetectorDisp": "Our AI-powered Risk Detection for Student Analysis program for Learning Management Systems (LMS) uses predictive analytics to identify students at risk of dropping out or failing courses. By flagging these high-risk learners early, instructors and administrators can intervene with targeted support to help improve student retention and success rates across your institution.",
+
+  "country": "Country",
+  "dayStudied": "Studied Day",
+  "activityEngagement": "Activity Engagement",
+  "totalClicks": "Total click on Resource",
+  "assessCompletedRate": "Assessment Complete Rate",
+  "averageAssessmentScore": "Average Assessment Score",
+
+  "predict": "Predict",
+  "riskLevel": "Risk Level",
+
+
+  "studentPerformance": "Student Performance",
+
+  "stuPerfTitle": "Student Performance Analysis",
+  "stuPerfDisp": "Our AI-powered Student Performance Analysis tool for Learning Management Systems provides deep insights into student learning and outcomes. Analyze individual and cohort performance, identify at-risk learners, and uncover opportunities to optimize course content and teaching methods. Drive improved student success with data-driven decision making.",
+
+  "uploadDisp": "Drag and drop file here, or click to select file",
+  "upload": "Upload",
+
+  "comprehensiveAnalysis": "Comprehensive Analysis",
+  "segmentedAnalysis": "Segmented Analysis",
+
+  "compEduPerfMetrics": "Comprehensive Analysis Metrics",
+
+  "predictedStuPerfOnGender": "Student Performance on Gender",
+  "predStuPerfOnAge": "Student Performance on Age",
+  "predStuPerfOnCourse": "Student Performance on Course",
+  "predStuPerfOnQualification": "Student Performance on Qualification",
 
   "assessmentAnalytics": "Assessment Analytics",
   "distOfAveAssessOnCourse": "Distribution of Average Assessment on Course",
@@ -74,26 +96,45 @@
 
   "completedRateOnCourse": "Completition Rate on Course",
 
-  "analytics": "Analytics",
-  "analyticsPredict": "Analytics Predict",
-  "studentPerformance": "Student Performance",
-  "studentPerformanceAnalysis": "Student Performance Analysis",
 
-  "studiedTime": "Studied Time Weekly",
-  "accessCount": "Access Count to Resources",
-  "assessCompletedRate": "Assessemnt Completed Rate(%)",
-  "averageAssessmentScore": "Average Assessment Score(10)",
-  "predict": "Predict",
-  "riskLevel": "Risk Level",
-  "courseCompleteRate": "Course Completion Rate(%)",
-  "attendanceRate": "Attendance Rate(%)",
+  "dropOutAnalysis": "Drop Out Detection",
+  "dropOutAnalysisTitle": "Drop Out Analysis",
+  "dropOutAnalysisDisp": "Our Drop Out Analysis module proactively identifies students at high risk of course withdrawal or program non-completion. By analyzing learner engagement, performance, and other key factors, the tool flags potential drop outs early, enabling timely interventions to help keep students on track and improve retention rates across your institution.",
 
-  "studentPerformanceDisp": "Obtaining comprehensive analytics about student performance, assessment scores, and course data unlocks a wealth of insights that can be leveraged to significantly improve student outcomes. By analyzing this data effectively, educators can identify areas for improvement, personalize learning experiences, and ultimately foster a more successful learning environment for all students.",
+  "dropOut": "Drop Out",
+  "predictedDOOnGender": "Drop Out on Gender",
+  "predDOOnAge": "Drop Out on Age",
+  "predDOOnCourse": "Drop Out on Course",
+  "predDOOnQualification": "Drop Out on Qualification",
 
-  "compEduPerfMetrics": "Comprehensive Educational Performance Metrics",
+  "retention": "Retention Analysis",
+  "retentionTitle": "Retention Analysis",
+  "retentionDisp": "Our Retention Analysis solution delivers deep insights to help you improve student persistence and completion rates. Uncover the drivers of attrition, identify at-risk learners, and evaluate the impact of support initiatives. Leverage data-driven recommendations to optimizelearning experiences and boost long-term student retention across your programs.",
 
-  "uploadDisp": "Drag and drop file here, or click to select file",
-  "upload": "Upload",
+  "predictedRTOnGender": "Retention on Gender",
+  "predRTOnAge": "Retention on Age",
+  "predRTOnCourse": "Retention on Course",
+  "predRTOnQualification": "Retention on Qualification",
+
+
+  "users": "Users",
+  "rowPerPage": "Row Per Page",
+  "goto": "Go To",
+  "firstname": "First Name",
+  "lastname": "Last Name",
+  "email": "Email",
+  "company": "Company",
+  "role": "Role",
+  "add": "Add",
+  "delete": "Delete",
+  "deleteUser": "Delete User",
+
+  "demoRequest": "Demo Request",
+
+  "logout": "Log out",
+
+  
+
 
   "allRightReserved": "All rights reserved",
 
@@ -105,23 +146,9 @@
   "warning": "Warning",
   "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again.",
 
-  "errorLogin": "Email or password is incorrect.",
+  "errorLogin": "Email or password is incorrect."
 
-  "admin": "Administrator",
-  "users": "Users",
-  "demoRequest": "Demo Request",
 
-  "riskDetector": "Risk Detector",
-  
-  "riskDetectorDisp": "Predicting student performance on an online Learning Management System (LMS) is a groundbreaking capability that empowers educators and institutions to proactively identify and support students at risk, while also enabling high-achieving students to excel further. By leveraging advanced data analytics and machine learning algorithms, this innovative approach provides a comprehensive overview of student engagement, progress, and potential success within the online course environment.",
 
-  "retention": "Retention Analysis",
-  "dropOutAnalysis": "Drop Out Analysis",
 
-  "previousGrade": "Previous Grade(10)",
-  "mentalHealth": "Mental Health",
-
-  "country": "Country",
-
-  "dropOut":  "Drop Out"
 }

@@ -16,7 +16,7 @@ const analytics = {
   children: [
     {
       id: 'risk-detector',
-      title: <FormattedMessage id="riskDetector" />,
+      title: <FormattedMessage id="riskDectection" />,
       type: 'item',
       url: '/analytics/risk-detector',
       icon: icons.StockOutlined

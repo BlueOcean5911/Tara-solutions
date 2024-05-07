@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useMemo, useState } from 'react';
 
 // material-ui
-import { Box, Chip, Grid, Stack, Table, TableBody, TableCell, TableHead, TableRow, Tooltip, IconButton } from '@mui/material';
+import { Box, Chip, Grid, Stack, Table, TableBody, TableCell, TableHead, TableRow, Tooltip, IconButton, Typography } from '@mui/material';
 
 // third-party
 import { useTable, useFilters, usePagination, useRowSelect } from 'react-table';
@@ -15,6 +15,7 @@ import { CSVExport, TablePagination } from 'components/third-party/ReactTable';
 import { deleteDemoRequest, getDemoRequests } from 'service/demo-request.service';
 import { UserAddOutlined } from '@ant-design/icons';
 import { createUser } from 'service/users.service';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| REACT TABLE ||============================== //
 
@@ -68,7 +69,7 @@ function ReactTable({ columns, data, top }) {
         {
           accessor: 'edit',
           id: 'edit',
-          Header: 'add',
+          Header: <FormattedMessage id="add" />,
           Cell: ColumnCell
         }
       ]);
@@ -167,19 +168,19 @@ const DemoRequest = () => {
   const columns = useMemo(
     () => [
       {
-        Header: 'First Name',
+        Header: <FormattedMessage id="firstname" />,
         accessor: 'first_name'
       },
       {
-        Header: 'Last Name',
+        Header: <FormattedMessage id="lastname" />,
         accessor: 'last_name'
       },
       {
-        Header: 'Email',
+        Header: <FormattedMessage id="email" />,
         accessor: 'email'
       },
       {
-        Header: 'Company',
+        Header: <FormattedMessage id="company" />,
         accessor: 'company'
       }
     ],
@@ -188,8 +189,13 @@ const DemoRequest = () => {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <MainCard title="Demo Request" content={false} secondary={<CSVExport data={data} filename={'pagination-top-table.csv'} />}>
+      <Grid item spacing={3} xs={12}>
+        <Typography variant="h2">
+          <FormattedMessage id="demoRequest" />
+        </Typography>
+      </Grid>
+      <Grid spacing={3} item xs={12}>
+        <MainCard>
           <ScrollX>
             <ReactTable columns={columns} data={data} top />
           </ScrollX>

@@ -45,10 +45,10 @@ const ComprehensiveAnalysis = () => {
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
               >
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
-                  <FormattedMessage id="studentPerformanceAnalysis" />
+                  <FormattedMessage id="stuPerfTitle" />
                 </Typography>
                 <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
-                  <FormattedMessage id="studentPerformanceDisp" />
+                  <FormattedMessage id="stuPerfDisp" />
                 </Typography>
               </Box>
             </Grid>
@@ -65,8 +65,13 @@ const ComprehensiveAnalysis = () => {
           <TabContext value={value}>
             <Box margin={2}>
               <Tabs value={value} onChange={handleChange} aria-label="student performance tabs">
-                <Tab label="Comprehensive Analysis" icon={<DotChartOutlined />} iconPosition="start" {...a11yProps(0)} />
-                <Tab label="Segmented analysis" icon={<UserOutlined />} iconPosition="start" {...a11yProps(1)} />
+                <Tab
+                  label={<FormattedMessage id="comprehensiveAnalysis" />}
+                  icon={<DotChartOutlined />}
+                  iconPosition="start"
+                  {...a11yProps(0)}
+                />
+                <Tab label={<FormattedMessage id="segmentedAnalysis" />} icon={<UserOutlined />} iconPosition="start" {...a11yProps(1)} />
               </Tabs>
             </Box>
             <TabPanel value={0}>

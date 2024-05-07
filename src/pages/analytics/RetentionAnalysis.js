@@ -11,6 +11,8 @@ import { DotChartOutlined, UserOutlined } from '@ant-design/icons';
 import StudentPerformanceSegmentedAnalysis from 'sections/analytics/DOSegmentedAnalysis';
 
 import PropTypes from 'prop-types';
+import RetentionComprehensiveAnalysis from 'sections/analytics/RetentionComprehensiveAnalysis';
+import RetentionSegmentedAnalysis from 'sections/analytics/RetentionSegmentedAnalysis';
 
 // ==============================|| SAMPLE PAGE ||============================== //
 
@@ -60,10 +62,10 @@ const DropOutAnalysis = () => {
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
               >
                 <Typography variant="h2" color={'grey'} marginY={'1rem'}>
-                  <FormattedMessage id="studentPerformance" />
+                  <FormattedMessage id="retentionTitle" />
                 </Typography>
                 <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
-                  <FormattedMessage id="studentPerformanceDisp" />
+                  <FormattedMessage id="retentionDisp" />
                 </Typography>
               </Box>
             </Grid>
@@ -72,7 +74,7 @@ const DropOutAnalysis = () => {
       </Grid>
 
       <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <UploadFiles setAnalysisData={setAnalysisData} setStudentData={setStudentData} type="drop-out-analysis" />
+        <UploadFiles setAnalysisData={setAnalysisData} setStudentData={setStudentData} type="retention-analysis" />
       </Grid>
 
       <Grid item xs={12} lg={12}>
@@ -80,18 +82,23 @@ const DropOutAnalysis = () => {
           <>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="student performance tabs">
-                <Tab label="Comprehensive Analysis" icon={<DotChartOutlined />} iconPosition="start" {...a11yProps(0)} />
-                <Tab label="Segmented analysis" icon={<UserOutlined />} iconPosition="start" {...a11yProps(1)} />
+                <Tab
+                  label={<FormattedMessage id="comprehensiveAnalysis" />}
+                  icon={<DotChartOutlined />}
+                  iconPosition="start"
+                  {...a11yProps(0)}
+                />
+                <Tab label={<FormattedMessage id="segmentedAnalysis" />} icon={<UserOutlined />} iconPosition="start" {...a11yProps(1)} />
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
               <Grid container xs={12} rowSpacing={4.5} columnSpacing={2.75}>
-                <DOComprehensiveAnalysis data={analysisData} />
+                <RetentionComprehensiveAnalysis data={analysisData} />
               </Grid>
             </TabPanel>
             <TabPanel value={value} index={1}>
               <Grid container xs={12} rowSpacing={4.5} columnSpacing={2.75}>
-                <StudentPerformanceSegmentedAnalysis studentData={studentData} />
+                <RetentionSegmentedAnalysis studentData={studentData} />
               </Grid>
             </TabPanel>
           </>

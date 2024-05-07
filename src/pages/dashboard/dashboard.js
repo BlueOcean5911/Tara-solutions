@@ -56,7 +56,7 @@ const Dashboard = () => (
             </Typography>
           </Stack>
         </Box>
-        <FinalResult series={[2165, 10464, 6789, 6849]} labels={['Distinct', 'Pass', 'Fail', 'Withdrawn']} />
+        <FinalResult series={[2165, 10464, 6789, 6849]} labels={['Distinct', 'Pass', 'Withdrawn', 'Fail']} />
       </MainCard>
     </Grid>
     <Grid item xs={12} md={2} lg={3} />

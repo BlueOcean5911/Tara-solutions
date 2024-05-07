@@ -32,6 +32,7 @@ import { useDrop, useDrag, useDragLayer } from 'react-dnd';
 
 // assets
 import { CaretUpOutlined, CaretDownOutlined, DragOutlined, CheckOutlined, DownloadOutlined } from '@ant-design/icons';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| HEADER HEADER ||============================== //
 
@@ -93,7 +94,7 @@ export const TablePagination = ({ gotoPage, rows, setPageSize, pageSize, pageInd
         <Stack direction="row" spacing={1} alignItems="center">
           <Stack direction="row" spacing={1} alignItems="center">
             <Typography variant="caption" color="secondary">
-              Row per page
+              <FormattedMessage id="rowPerPage" />
             </Typography>
             <FormControl sx={{ m: 1 }}>
               <Select
@@ -115,7 +116,7 @@ export const TablePagination = ({ gotoPage, rows, setPageSize, pageSize, pageInd
             </FormControl>
           </Stack>
           <Typography variant="caption" color="secondary">
-            Go to
+            <FormattedMessage id="goto" />
           </Typography>
           <TextField
             size="small"

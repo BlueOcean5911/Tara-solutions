@@ -6,6 +6,7 @@ import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 
 // assets
 import { LogoutOutlined } from '@ant-design/icons';
+import { FormattedMessage } from 'react-intl';
 
 // ==============================|| HEADER PROFILE - PROFILE TAB ||============================== //
 
@@ -21,7 +22,7 @@ const ProfileTab = ({ handleLogout }) => {
         <ListItemIcon>
           <LogoutOutlined />
         </ListItemIcon>
-        <ListItemText primary="Logout" />
+        <ListItemText primary={<FormattedMessage id="logout" />} />
       </ListItemButton>
     </List>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 const ApexChart = ({ value }) => {
   const [state, setState] = useState({

@@ -27,6 +27,19 @@ class UploadFilesService {
     });
   }
 
+  retention_analysis(file, onUploadProgress) {
+    let formData = new FormData();
+
+    formData.append('file', file);
+
+    return http.post('/analysis/retention-analysis', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      onUploadProgress
+    });
+  }
+
   predict(data) {
     const requestData = {
       days_studied: data.dayStuded,

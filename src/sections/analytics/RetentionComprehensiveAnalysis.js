@@ -2,10 +2,7 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 import { FormattedMessage } from 'react-intl';
-import ActivityEngagedOnCourse from 'sections/dashboard/ActivityEngagedOnCourse';
 import AgeAnalytics from 'sections/dashboard/AgeAnalytics';
-import AverageAssessmentScore from 'sections/dashboard/AverageAssessmentScore';
-import CompletitionRateOnCourse from 'sections/dashboard/CompletitionRateOnCourse';
 import GenderAnalytics from 'sections/dashboard/GenderAnalytics';
 import FinalResult from 'sections/dashboard/PerformanceAnalytics';
 import PerformanceOnCourse from 'sections/dashboard/PerformanceOnCourse';
@@ -13,7 +10,7 @@ import QualificationAnalytics from 'sections/dashboard/QualificationAnalytics';
 
 import PropTypes from 'prop-types';
 
-const AnalysisComponent = ({ data }) => {
+const RetentionComprehensiveAnalysis = ({ data }) => {
   return (
     <>
       {/* row 1 */}
@@ -58,7 +55,7 @@ const AnalysisComponent = ({ data }) => {
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predictedStudentPerformance" />
+                <FormattedMessage id="retention" />
               </Typography>
             </Stack>
           </Box>
@@ -73,7 +70,7 @@ const AnalysisComponent = ({ data }) => {
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predictedStuPerfOnGender" />
+                <FormattedMessage id="predictedRTOnGender" />
               </Typography>
             </Stack>
           </Box>
@@ -85,7 +82,7 @@ const AnalysisComponent = ({ data }) => {
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predStuPerfOnAge" />
+                <FormattedMessage id="predRTOnAge" />
               </Typography>
             </Stack>
           </Box>
@@ -99,7 +96,7 @@ const AnalysisComponent = ({ data }) => {
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predStuPerfOnCourse" />
+                <FormattedMessage id="predRTOnCourse" />
               </Typography>
             </Stack>
           </Box>
@@ -111,66 +108,19 @@ const AnalysisComponent = ({ data }) => {
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predStuPerfOnQualification" />
+                <FormattedMessage id="predDOOnQualification" />
               </Typography>
             </Stack>
           </Box>
           <QualificationAnalytics series={data.perf_on_qualification.series} categories={data.perf_on_qualification.categories} />
         </MainCard>
       </Grid>
-
-      {/* row 5 */}
-      <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Typography variant="h5">
-          <FormattedMessage id="assessmentAnalytics" />
-        </Typography>
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <MainCard sx={{ mt: 2 }} content={false}>
-          <Box sx={{ p: 3, pb: 0 }}>
-            <Stack spacing={2}>
-              <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="distOfAveAssessOnCourse" />
-              </Typography>
-            </Stack>
-          </Box>
-          <AverageAssessmentScore series={data.dist_of_total_clicks_on_course.series} />
-        </MainCard>
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <MainCard sx={{ mt: 2 }} content={false}>
-          <Box sx={{ p: 3, pb: 0 }}>
-            <Stack spacing={2}>
-              <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="activityEngagedOnCourse" />
-              </Typography>
-            </Stack>
-          </Box>
-          <ActivityEngagedOnCourse series={data.dist_of_activity_engaged_on_course.series} />
-        </MainCard>
-      </Grid>
-
-      {/* row 6 */}
-      <Grid item xs={12} lg={3} />
-      <Grid item xs={12} lg={6}>
-        <MainCard sx={{ mt: 2 }} content={false}>
-          <Box sx={{ p: 3, pb: 0 }}>
-            <Stack spacing={2}>
-              <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="completedRateOnCourse" />
-              </Typography>
-            </Stack>
-          </Box>
-          <CompletitionRateOnCourse series={data.completion_rate_on_course.series} categories={data.completion_rate_on_course.categories} />
-        </MainCard>
-      </Grid>
-      <Grid item xs={12} lg={3} />
     </>
   );
 };
 
-AnalysisComponent.propTypes = {
+RetentionComprehensiveAnalysis.propTypes = {
   data: PropTypes.object
 };
 
-export default AnalysisComponent;
+export default RetentionComprehensiveAnalysis;

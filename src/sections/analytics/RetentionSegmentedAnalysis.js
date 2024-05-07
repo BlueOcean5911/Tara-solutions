@@ -114,7 +114,7 @@ ProgressCell.propTypes = {
   value: PropTypes.number
 };
 
-const StudentPerformanceSegmentedAnalysis = ({ studentData }) => {
+const RetentionSegmentedAnalysis = ({ studentData }) => {
   console.log(studentData);
   const data = useMemo(() => studentData, [studentData]);
   const columns = useMemo(
@@ -144,7 +144,7 @@ const StudentPerformanceSegmentedAnalysis = ({ studentData }) => {
         accessor: 'days_studied'
       },
       {
-        Header: 'Drop Out',
+        Header: 'Retention',
         accessor: 'final_result',
         Cell: StatusCell
       }
@@ -163,8 +163,8 @@ const StudentPerformanceSegmentedAnalysis = ({ studentData }) => {
   );
 };
 
-StudentPerformanceSegmentedAnalysis.propTypes = {
+RetentionSegmentedAnalysis.propTypes = {
   studentData: PropTypes.array.isRequired
 };
 
-export default StudentPerformanceSegmentedAnalysis;
+export default RetentionSegmentedAnalysis;

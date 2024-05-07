@@ -66,6 +66,24 @@ const UploadFiles = ({ setAnalysisData, setStudentData, type = 'stu-perf-analysi
           handleOpen();
           setCurrentFile(undefined);
         });
+    } else if (type === 'retention-analysis') {
+      UploadService.retention_analysis(currentFile, (event) => {
+        setProgress(Math.round((100 * event.loaded) / event.total));
+      })
+        .then((response) => {
+          console.log(JSON.parse(response.data.result));
+          const result = JSON.parse(response.data.result);
+          setAnalysisData(result.analysis_result);
+          setStudentData(result.student_data);
+        })
+        .catch((e) => {
+          console.log(e);
+          setProgress(0);
+          // Todo: show the modal
+          setMessageId('warningMessage1');
+          handleOpen();
+          setCurrentFile(undefined);
+        });
     }
 
     setSelectedFiles(undefined);
