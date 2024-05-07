@@ -115,7 +115,9 @@ export const SupabaseProvider = ({ children }) => {
   };
 
   const resetPassword = async (email) => {
-    await supabase.auth.resetPasswordForEmail(email);
+    await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: process.env.REACT_APP_URL + '/reset-password'
+    });
   };
 
   const updateProfile = () => {};
