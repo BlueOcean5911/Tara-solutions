@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 // third-party
 import ReactApexChart from 'react-apexcharts';
 
-// project import
-import { ThemeMode } from 'config';
-import useConfig from 'hooks/useConfig';
+import PropTypes from 'prop-types';
 
 // ==============================|| MONTHLY BAR CHART ||============================== //
 
@@ -76,6 +73,11 @@ const PerformanceOnCourse = ({
       <ReactApexChart options={options} series={series_data} type="bar" height={430} />
     </Box>
   );
+};
+
+PerformanceOnCourse.propTypes = {
+  series: PropTypes.array,
+  categories: PropTypes.array
 };
 
 export default PerformanceOnCourse;

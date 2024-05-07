@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 // third-party
 import ReactApexChart from 'react-apexcharts';
 
-// project import
-import { ThemeMode } from 'config';
-import useConfig from 'hooks/useConfig';
+import PropTypes from 'prop-types';
 
 // ==============================|| MONTHLY BAR CHART ||============================== //
 
@@ -20,7 +17,7 @@ const CompletitionRateOnCourse = ({
       data: [0.7, 0.53, 0.38, 0.43, 0.59, 0.4, 0.61]
     }
   ],
-  categories = ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'GGG'],
+  categories = ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'GGG']
 }) => {
   // chart options
   const options = {
@@ -111,13 +108,18 @@ const CompletitionRateOnCourse = ({
       }
     }
   };
-  const [seriesData, set] = useState(series);
+  const [seriesData] = useState(series);
 
   return (
     <Box id="chart" sx={{ bgcolor: 'transparent' }}>
       <ReactApexChart options={options} series={seriesData} type="bar" height={350} />
     </Box>
   );
+};
+
+CompletitionRateOnCourse.propTypes = {
+  series: PropTypes.object,
+  categories: PropTypes.array
 };
 
 export default CompletitionRateOnCourse;

@@ -34,7 +34,7 @@ const pieChartOptions = {
 const FinalResult = ({ series = [44, 55, 41, 17], labels = ['Distinct', 'Pass', 'Fail', 'Withdrawn'] }) => {
   const [series_data] = useState(series);
 
-  const [options, setOptions] = useState({ ...pieChartOptions, labels: labels });
+  const [options] = useState({ ...pieChartOptions, labels: labels });
 
   return (
     <Box id="chart" sx={{ bgcolor: 'transparent' }}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // material-ui
 import { Box } from '@mui/material';
@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 // third-party
 import ReactApexChart from 'react-apexcharts';
 import { distributionAverageAssessmentOnCourse } from 'analytics-data';
+
+import PropTypes from 'prop-types';
 
 // ==============================|| MONTHLY BAR CHART ||============================== //
 
@@ -51,6 +53,10 @@ const AverageAssessmentScore = ({ series = distributionAverageAssessmentOnCourse
       <ReactApexChart options={options} series={series_data} type="line" height={430} />
     </Box>
   );
+};
+
+AverageAssessmentScore.propTypes = {
+  series: PropTypes.array
 };
 
 export default AverageAssessmentScore;

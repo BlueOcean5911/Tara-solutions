@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // material-ui
 import { Box } from '@mui/material';
@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 // third-party
 import ReactApexChart from 'react-apexcharts';
 import { distributionActivityEngaggementOnCourse } from 'analytics-data';
+
+import PropTypes from 'prop-types';
 
 // ==============================|| MONTHLY BAR CHART ||============================== //
 
@@ -52,5 +54,9 @@ const ActivityEngagedOnCourse = ({ series = distributionActivityEngaggementOnCou
     </Box>
   );
 };
+
+ActivityEngagedOnCourse.propTypes = {
+  series: PropTypes.array
+}
 
 export default ActivityEngagedOnCourse;

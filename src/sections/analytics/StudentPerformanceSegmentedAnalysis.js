@@ -8,7 +8,6 @@ import { Box, Chip, Grid, Stack, Table, TableBody, TableCell, TableHead, TableRo
 import { useTable, useFilters, usePagination } from 'react-table';
 
 // project import
-import makeData from 'data/react-table';
 import MainCard from 'components/MainCard';
 import ScrollX from 'components/ScrollX';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
