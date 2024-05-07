@@ -6,9 +6,7 @@ import MainCard from 'components/MainCard';
 import UploadFiles from 'components/upload/upload';
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import DOComprehensiveAnalysis from 'sections/analytics/DOComprehensiveAnalysis';
 import { DotChartOutlined, UserOutlined } from '@ant-design/icons';
-import StudentPerformanceSegmentedAnalysis from 'sections/analytics/DOSegmentedAnalysis';
 
 import PropTypes from 'prop-types';
 import RetentionComprehensiveAnalysis from 'sections/analytics/RetentionComprehensiveAnalysis';

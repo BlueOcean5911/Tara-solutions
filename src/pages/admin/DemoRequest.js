@@ -11,7 +11,7 @@ import { useTable, useFilters, usePagination, useRowSelect } from 'react-table';
 import MainCard from 'components/MainCard';
 import ScrollX from 'components/ScrollX';
 import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
-import { CSVExport, TablePagination } from 'components/third-party/ReactTable';
+import { TablePagination } from 'components/third-party/ReactTable';
 import { deleteDemoRequest, getDemoRequests } from 'service/demo-request.service';
 import { UserAddOutlined } from '@ant-design/icons';
 import { createUser } from 'service/users.service';

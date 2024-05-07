@@ -2,7 +2,7 @@ import { supabase as db } from './supabaseClient';
 
 // Create a new demo request
 export async function createDemoRequest(email, firstName, lastName, company) {
-  const { data, error } = await db.from('demo-request').insert([{ email, first_name: firstName, last_name: lastName, company }]);
+  const { error } = await db.from('demo-request').insert([{ email, first_name: firstName, last_name: lastName, company }]);
 
   if (error) {
     console.error('Error creating demo request:', error.message);

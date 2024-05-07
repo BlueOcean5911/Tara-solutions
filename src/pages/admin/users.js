@@ -9,7 +9,7 @@ import { useMemo } from 'react';
 
 // material-ui
 import { Chip, Stack, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
-import { TextField, Select, MenuItem, Slider, Tooltip, IconButton } from '@mui/material';
+import { TextField, Select, MenuItem, Tooltip, IconButton } from '@mui/material';
 
 // third-party
 import { useTable, useFilters, usePagination } from 'react-table';
@@ -20,28 +20,12 @@ import * as Yup from 'yup';
 import { DefaultColumnFilter } from 'utils/react-table';
 
 import ScrollX from 'components/ScrollX';
-import LinearWithLabel from 'components/@extended/progress/LinearWithLabel';
-import { CSVExport, TablePagination } from 'components/third-party/ReactTable';
+import { TablePagination } from 'components/third-party/ReactTable';
 
 // assets
-import { CheckOutlined, UserDeleteOutlined } from '@ant-design/icons';
+import { UserDeleteOutlined } from '@ant-design/icons';
 import { deleteUser, getUsers, updateUser } from 'service/users.service';
 import { FormattedMessage } from 'react-intl';
-
-// ==============================|| SAMPLE PAGE ||============================== //
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #888',
-  borderRadius: '1rem',
-  boxShadow: 24,
-  p: 4
-};
 
 // ==============================|| REACT TABLE ||============================== //
 
@@ -98,7 +82,7 @@ function ReactTable({ columns, data, top, updateData, skipPageReset, deleteRowBy
       updateData,
       deleteRowByEmail,
       data,
-      getSubRows: (row) => { },
+      getSubRows: () => {},
       initialState: { pageIndex: 0, pageSize: 10 }
     },
     useFilters,
@@ -176,7 +160,6 @@ ReactTable.propTypes = {
 
 const CellEdit = ({ value: initialValue, row: { index }, column: { id, dataType }, updateData }) => {
   const [value, setValue] = useState(initialValue);
-  const [showSelect, setShowSelect] = useState(false);
 
   const onChange = (e) => {
     setValue(e.target?.value);

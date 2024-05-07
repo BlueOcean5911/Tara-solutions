@@ -82,14 +82,14 @@ export const FirebaseProvider = ({ children }) => {
     return firebase.auth().signInWithPopup(provider);
   };
 
-  const firebaseRegister = async (email, password, firstName, lastName, company) => {
+  const firebaseRegister = async (email, password, firstName, lastName) => {
     try {
       const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
       // After successful registration, set the user's display name
       await userCredential.user.updateProfile({
         displayName: firstName + ' ' + lastName,
         metadata: {
-          role: "viewer"
+          role: 'viewer'
         }
       });
       console.log('User registered successfully');
