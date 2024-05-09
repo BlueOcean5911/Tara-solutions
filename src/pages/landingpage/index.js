@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
@@ -40,7 +38,7 @@ const LandingPage = () => {
               <div className="col-lg-12">
                 <nav className="navbar navbar-expand-lg">
                   <a className="navbar-brand" href="/">
-                    <img src="assets/images/logo/logo.png" alt="Logo" width="150px" height="80px" />
+                    <img src="assets/images/logo/logo.png" alt="Logo" width="180px" height="120px" />
                   </a>
                   <button
                     className="navbar-toggler"
@@ -102,9 +100,6 @@ const LandingPage = () => {
             <div className="row justify-content-center">
               <div className="col-lg-8">
                 <div className="header-hero-content text-center">
-                  <h3 className="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                    <FormattedMessage id="homeTitle" />
-                  </h3>
                   <h2 className="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
                     <FormattedMessage id="homeSubtitle" />
                   </h2>
@@ -143,6 +138,7 @@ const LandingPage = () => {
                 <div className="line m-auto"></div>
                 <h3 className="title">
                   <FormattedMessage id="featuresTitle1" />
+                  <br />
                   <span>
                     <FormattedMessage id="featuresTitle2" />
                   </span>
@@ -351,7 +347,7 @@ const LandingPage = () => {
               <div className="col-lg-4 col-md-6 col-sm-8">
                 <div className="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                   <a className="logo" href="javascript:void(0)">
-                    <img src="assets/images/logo/logo.png" alt="logo" />
+                    <img src="assets/images/logo/logo.png" alt="logo" width="180px" height="120px" />
                   </a>
                   <p className="text">
                     <FormattedMessage id="contactUsDescription1" />
@@ -416,7 +412,7 @@ const LandingPage = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="https://tarasolutions-cr.com/eng/unete-a-nosotros-2/">
+                        <a href="/send-request">
                           <FormattedMessage id="contactUsLink2" />
                         </a>
                       </li>

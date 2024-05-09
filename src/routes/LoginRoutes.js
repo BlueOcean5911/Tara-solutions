@@ -28,7 +28,7 @@ const LoginRoutes = {
       element: <AuthLogin />
     },
     {
-      path: 'register',
+      path: 'send-request',
       element: <AuthRegister />
     },
     {
