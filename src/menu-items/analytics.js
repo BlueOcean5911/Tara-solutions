@@ -28,20 +28,20 @@ const analytics = {
       url: '/analytics/drop-out',
       icon: icons.RiseOutlined
     },
-    {
-      id: 'student-performance',
-      title: <FormattedMessage id="studentPerformance" />,
-      type: 'item',
-      url: '/analytics/student-performance',
-      icon: icons.BarChartOutlined
-    },
-    {
-      id: 'retention',
-      title: <FormattedMessage id="retention" />,
-      type: 'item',
-      url: '/analytics/retention',
-      icon: icons.PieChartOutlined
-    }
+    // {
+    //   id: 'student-performance',
+    //   title: <FormattedMessage id="studentPerformance" />,
+    //   type: 'item',
+    //   url: '/analytics/student-performance',
+    //   icon: icons.BarChartOutlined
+    // },
+    // {
+    //   id: 'retention',
+    //   title: <FormattedMessage id="retention" />,
+    //   type: 'item',
+    //   url: '/analytics/retention',
+    //   icon: icons.PieChartOutlined
+    // }
   ]
 };
 
