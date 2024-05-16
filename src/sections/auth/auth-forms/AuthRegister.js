@@ -13,7 +13,9 @@ import {
   InputLabel,
   OutlinedInput,
   Stack,
-  Typography
+  Typography,
+  Autocomplete,
+  TextField
 } from '@mui/material';
 
 // third party
@@ -32,6 +34,10 @@ import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+
+// import country data
+import countries from 'data/countries';
+import { sendEmail } from 'service/send-mail';
 
 // ============================|| JWT - REGISTER ||============================ //
 
@@ -55,6 +61,17 @@ const AuthRegister = () => {
     setLevel(strengthColor(temp));
   };
 
+  const getFormattedMessage = (firstName, lastName, company, country, phoneNumber, email, message) => {
+    let formattedMessage = '';
+    formattedMessage += `Name: ${firstName} ${lastName} \n`;
+    formattedMessage += `Country: ${country} \n`;
+    formattedMessage += `Company: ${company} \n`;
+    formattedMessage += `Phone Number: ${phoneNumber}`;
+    formattedMessage += `Email: ${email}`;
+    formattedMessage += `Message: ${message}`;
+    return formattedMessage;
+  };
+
   useEffect(() => {
     changePassword('');
   }, []);
@@ -66,6 +83,8 @@ const AuthRegister = () => {
           firstname: '',
           lastname: '',
           email: '',
+          country: { code: 'CR', label: 'Costa Rica', phone: '+506' },
+          phone: '',
           company: '',
           password: '',
           submit: null
@@ -73,31 +92,51 @@ const AuthRegister = () => {
         validationSchema={Yup.object().shape({
           firstname: Yup.string().max(255).required('First Name is required'),
           lastname: Yup.string().max(255).required('Last Name is required'),
+          company: Yup.string().max(255).required('Company is required'),
+          phone: Yup.string().max(255).required('Phone Number is required'),
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
           password: Yup.string().max(255).required('Password is required')
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            await supabaseRegister(values.email, values.password, values.firstname, values.lastname, values.company);
-            if (scriptedRef.current) {
-              setStatus({ success: true });
-              setSubmitting(false);
-              dispatch(
+            const body = getFormattedMessage(
+              values.firstname,
+              values.lastname,
+              values.company,
+              values.country.label,
+              values.country.phone + values.country.phone,
+              values.email,
+              values.message
+            );
+            const subject = 'New request has been received!';
+            sendEmail(subject, body).then((res) => {
+              if (res == 'success') {
+                dispatch(
+                  openSnackbar({
+                    open: true,
+                    message: 'Successfully your request has been sent!',
+                    variant: 'alert',
+                    alert: {
+                      color: 'success'
+                    },
+                    close: false
+                  })
+                );
+                setTimeout(() => {
+                  navigate('/login', { replace: true });
+                }, 1500);
+              } else {
                 openSnackbar({
                   open: true,
-                  message: 'Your registration has been successfully completed.',
+                  message: 'Unfortunately, your request has not been sent.',
                   variant: 'alert',
                   alert: {
-                    color: 'success'
+                    color: 'error'
                   },
                   close: false
-                })
-              );
-
-              setTimeout(() => {
-                navigate('/login', { replace: true });
-              }, 1500);
-            }
+                });
+              }
+            });
           } catch (err) {
             console.error(err);
             if (scriptedRef.current) {
@@ -108,7 +147,7 @@ const AuthRegister = () => {
           }
         }}
       >
-        {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+        {({ errors, handleBlur, handleChange, handleSubmit, setValues, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
@@ -156,7 +195,7 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="company-signup">Company</InputLabel>
+                  <InputLabel htmlFor="company-signup">Company*</InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.company && errors.company)}
@@ -173,6 +212,81 @@ const AuthRegister = () => {
                       {errors.company}
                     </FormHelperText>
                   )}
+                </Stack>
+              </Grid>
+              <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="country-signup">Country</InputLabel>
+                  <Autocomplete
+                    id="country-signup"
+                    fullWidth
+                    type="country"
+                    name="country"
+                    options={countries}
+                    value={values.country}
+                    onBlur={handleBlur}
+                    onChange={(event, value) => {
+                      setValues({ ...values, country: value }); // Update the country value in Formik form state
+                    }}
+                    isOptionEqualToValue={(option, value) => option.code === value.code}
+                    autoHighlight
+                    getOptionLabel={(option) => option.label}
+                    renderOption={(props, option) => (
+                      <Box key={option.code} component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+                        {option.code && (
+                          <img
+                            loading="lazy"
+                            width="20"
+                            src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                            srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                            alt=""
+                          />
+                        )}
+                        {option.label} ({option.code}) {option.phone}
+                      </Box>
+                    )}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        placeholder="Choose a country"
+                        inputProps={{
+                          ...params.inputProps,
+                          autoComplete: 'new-password' // disable autocomplete and autofill
+                        }}
+                      />
+                    )}
+                  />
+                </Stack>
+              </Grid>
+              <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="phone-number-signup">Phone number*</InputLabel>
+                  <Grid container xs={12}>
+                    <Grid item xs={2}>
+                      <Stack direction="row" justifyContent="center" alignItems="center" sx={{ height: '100%' }}>
+                        {values.country ? values.country.phone : ''}
+                      </Stack>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <OutlinedInput
+                        fullWidth
+                        error={Boolean(touched.phone && errors.phone)}
+                        id="phone-number-login"
+                        type="phone"
+                        name="phone"
+                        value={values.phone}
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        placeholder="Phone number"
+                        inputProps={{}}
+                      />
+                      {touched.phone && errors.phone && (
+                        <FormHelperText error id="helper-text-phone-signup">
+                          {errors.phone}
+                        </FormHelperText>
+                      )}
+                    </Grid>
+                  </Grid>
                 </Stack>
               </Grid>
               <Grid item xs={12}>
@@ -199,7 +313,7 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="password-signup">Password</InputLabel>
+                  <InputLabel htmlFor="password-signup">Password*</InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.password && errors.password)}
@@ -248,6 +362,24 @@ const AuthRegister = () => {
                 </FormControl>
               </Grid>
               <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="email-signup">Message</InputLabel>
+                  <TextField
+                    fullWidth
+                    id="message"
+                    type="text"
+                    value={values.message}
+                    name="message"
+                    multiline
+                    maxRows={5}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="Input your message"
+                    inputProps={{}}
+                  />
+                </Stack>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography variant="body2">
                   By Signing up, you agree to our &nbsp;
                   <Link variant="subtitle2" component={RouterLink} to="#">
@@ -267,7 +399,7 @@ const AuthRegister = () => {
               <Grid item xs={12}>
                 <AnimateButton>
                   <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
-                    Create Account
+                    Send request
                   </Button>
                 </AnimateButton>
               </Grid>

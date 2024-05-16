@@ -5,7 +5,6 @@ import { Typography, Grid, Box, Stack } from '@mui/material';
 import MainCard from 'components/MainCard';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 import ActivityEngagedOnCourse from 'sections/dashboard/ActivityEngagedOnCourse';
-import AgeAnalytics from 'sections/dashboard/AgeAnalytics';
 import AverageAssessmentScore from 'sections/dashboard/AverageAssessmentScore';
 import DateRegistrationAnaltics from 'sections/dashboard/PerformanceOnCourse';
 import CompletitionRateOnCourse from 'sections/dashboard/CompletitionRateOnCourse';
@@ -62,6 +61,7 @@ const Dashboard = () => (
     <Grid item xs={12} md={2} lg={3} />
 
     {/* row 3 */}
+    <Grid item xs={12} lg={3} />
     <Grid item xs={12} lg={6}>
       <MainCard sx={{ mt: 2 }} content={false}>
         <Box sx={{ p: 3, pb: 0 }}>
@@ -74,7 +74,8 @@ const Dashboard = () => (
         <GenderAnalytics />
       </MainCard>
     </Grid>
-    <Grid item xs={12} lg={6}>
+    <Grid item xs={12} lg={3} />
+    {/* <Grid item xs={12} lg={6}>
       <MainCard sx={{ mt: 2 }} content={false}>
         <Box sx={{ p: 3, pb: 0 }}>
           <Stack spacing={2}>
@@ -85,7 +86,7 @@ const Dashboard = () => (
         </Box>
         <AgeAnalytics />
       </MainCard>
-    </Grid>
+    </Grid> */}
 
     {/* row 4 */}
     <Grid item xs={12} lg={6}>

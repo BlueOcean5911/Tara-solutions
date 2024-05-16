@@ -3,7 +3,6 @@ import MainCard from 'components/MainCard';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 import { FormattedMessage } from 'react-intl';
 import ActivityEngagedOnCourse from 'sections/dashboard/ActivityEngagedOnCourse';
-import AgeAnalytics from 'sections/dashboard/AgeAnalytics';
 import AverageAssessmentScore from 'sections/dashboard/AverageAssessmentScore';
 import CompletitionRateOnCourse from 'sections/dashboard/CompletitionRateOnCourse';
 import GenderAnalytics from 'sections/dashboard/GenderAnalytics';
@@ -68,6 +67,7 @@ const AnalysisComponent = ({ data }) => {
       <Grid item xs={12} md={2} lg={3} />
 
       {/* row 3 */}
+      <Grid item xs={12} lg={3} />
       <Grid item xs={12} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
@@ -80,7 +80,8 @@ const AnalysisComponent = ({ data }) => {
           <GenderAnalytics series={data.perf_on_gender.series} categories={data.perf_on_gender.categories} />
         </MainCard>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} lg={3} />
+      {/* <Grid item xs={12} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
@@ -91,7 +92,7 @@ const AnalysisComponent = ({ data }) => {
           </Box>
           <AgeAnalytics series={data.age_on_course.series} categories={data.age_on_course.categories} />
         </MainCard>
-      </Grid>
+      </Grid> */}
 
       {/* row 4 */}
       <Grid item xs={12} lg={6}>

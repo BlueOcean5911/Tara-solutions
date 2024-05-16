@@ -6,7 +6,7 @@
 
   "features": "Features",
   "featuresTitle1": "Concrete and Comprehensive Analysis",
-  "featuresTitle2": "comes with everything you need to analyze!",
+  "featuresTitle2": "comes with everything you need to analyze.",
   "featuresSubtitle1": "AI",
   "featuresSubdescription1": "Get predicted student performance and encourage better outcomes.",
   "featuresSubtitle2": "Data Visualization",
@@ -15,21 +15,21 @@
   "featuresSubdescription3": "Easily predict values and obtain comprehensive information.",
 
   "about": "About",
-  "aboutTitle1": "Artificial Intelligence",
-  "aboutDescription1": "AI technology provides valuable and insightful information to assist with student performance, data analysis, and creative tasks.",
-  "aboutTitle2": "Comprehensive Analysis",
-  "aboutDescription2": "Involves a deep dive into data and information from multiple angles, providing actionable insights for informed decision-making and continuous improvement.",
+  "aboutTitle1": "Our Vision",
+  "aboutDescription1": "Our vision is to transform education through intelligent and strategic analysis. We strive to be leaders in educational innovation, providing institutions with advanced tools that enable them to make informed and proactive decisions for student success. We seek to collaborate closely with educational institutions to create an environment where each student is supported individually and guided towards academic and professional success. With our focus on excellence and innovation, we aim to be a benchmark in the field of educational improvement and student development globally.",
+  "aboutTitle2": "Our Mission",
+  "aboutDescription2": "Tara Smart Metrics is dedicated to empowering educational institutions to help every student reach their full potential. Our mission is to provide innovative analysis and tracking tools that enable institutions to identify and address student needs proactively. We work to ensure that each student begins their academic career successfully and completes it satisfactorily, offering smart and strategic solutions that drive the educational success of all students.",
   "aboutTitle3": "Analyze Student Performance",
   "aboutDescription3": "AI facilitates collaborative learning environments by providing personalized recommendations and adaptive learning experiences.",
 
   "contactUs": "Contact Us",
   "contactUsTitle1": "Let's Dive into LMS Analytics",
-  "contactUsDescription1": "TARA SMART metrics is a leading provider of comprehensive analysis services for Learning Management System (LMS).",
+  "contactUsDescription1": "Tara Smart Metrics is a software platform that utilizes advanced Machine Learning and Artificial Intelligence techniques to assess students' academic performance. This system analyzes a set of specific metrics to determine the level of dropout risk for each student, enabling educational institutions to take proactive measures to maintain or even improve enrollment rates and student performance.",
   "contactUsLocationTitle": "LOCATIONS",
   "contactUsLocation1": "Costa Rica, San Jose, Barrio Amón, Ave 13, Calle 7.",
   "contactUsLocation2": "Republic of Panama, Ave Italia, Paitilla Gallery.",
   "contactUsAbout": "ABOUT",
-  "contactUsLink1": "About Tara Solutions",
+  "contactUsLink1": "About Tara smart metrics",
   "contactUsLink2": "Join Us",
   "contactUsTelephone": "+(506) 8701-6253",
   "contactUsMail": "info@tarasolutions-cr.com",
@@ -56,17 +56,18 @@
 
   "analytics": "Analytics",
 
-  "riskDectection": "Risk Detection",
+  "riskDectection": "Risk Detector",
 
-  "riskDetectorTitle": "Risk Detection Analysis",
-  "riskDetectorDisp": "Our AI-powered Risk Detection for Student Analysis program for Learning Management Systems (LMS) uses predictive analytics to identify students at risk of dropping out or failing courses. By flagging these high-risk learners early, instructors and administrators can intervene with targeted support to help improve student retention and success rates across your institution.",
-
-  "country": "Country",
-  "dayStudied": "Studied Day",
-  "activityEngagement": "Activity Engagement",
-  "totalClicks": "Total click on Resource",
-  "assessCompletedRate": "Assessment Complete Rate",
-  "averageAssessmentScore": "Average Assessment Score",
+  "riskDetectorTitle": "Risk Detetor",
+  "riskDetectorDisp": "Our AI-powered Risk Detector for Student Analysis program for Learning Management Systems (LMS) uses predictive analytics to identify students at risk of dropping out or failing courses. By flagging these high-risk learners early, instructors and administrators can intervene with targeted support to help improve student retention and success rates across your institution.",
+  
+  "numCredits": "Number of credits enrolled per semester",
+  "failureRate": "Failure rate",
+  "classAttendanceFreq": "Class attendance frequency",
+  "employmentStatus": "Employment status during the semester",
+  "financialSupport": "Receipt of scholarships or financial aid",
+  "previousEducationType": "Type of previous educational institution",
+  "familyIncomeRange": "Family income range",
 
   "predict": "Predict",
   "riskLevel": "Risk Level",
@@ -97,9 +98,9 @@
   "completedRateOnCourse": "Completition Rate on Course",
 
 
-  "dropOutAnalysis": "Drop Out Detection",
-  "dropOutAnalysisTitle": "Drop Out Analysis",
-  "dropOutAnalysisDisp": "Our Drop Out Analysis module proactively identifies students at high risk of course withdrawal or program non-completion. By analyzing learner engagement, performance, and other key factors, the tool flags potential drop outs early, enabling timely interventions to help keep students on track and improve retention rates across your institution.",
+  "dropOutAnalysis": "Drop Out Detector",
+  "dropOutAnalysisTitle": "Drop Out Detector",
+  "dropOutAnalysisDisp": "Our Drop Out Detector module proactively identifies students at high risk of course withdrawal or program non-completion. By analyzing learner engagement, performance, and other key factors, the tool flags potential drop outs early, enabling timely interventions to help keep students on track and improve retention rates across your institution.",
 
   "dropOut": "Drop Out",
   "predictedDOOnGender": "Drop Out on Gender",
@@ -107,9 +108,9 @@
   "predDOOnCourse": "Drop Out on Course",
   "predDOOnQualification": "Drop Out on Qualification",
 
-  "retention": "Retention Analysis",
-  "retentionTitle": "Retention Analysis",
-  "retentionDisp": "Our Retention Analysis solution delivers deep insights to help you improve student persistence and completion rates. Uncover the drivers of attrition, identify at-risk learners, and evaluate the impact of support initiatives. Leverage data-driven recommendations to optimizelearning experiences and boost long-term student retention across your programs.",
+  "retention": "Retention Detector",
+  "retentionTitle": "Retention Detector",
+  "retentionDisp": "Our Retention Detector solution delivers deep insights to help you improve student persistence and completion rates. Uncover the drivers of attrition, identify at-risk learners, and evaluate the impact of support initiatives. Leverage data-driven recommendations to optimizelearning experiences and boost long-term student retention across your programs.",
 
   "predictedRTOnGender": "Retention on Gender",
   "predRTOnAge": "Retention on Age",

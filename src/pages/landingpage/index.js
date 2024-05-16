@@ -38,7 +38,7 @@ const LandingPage = () => {
               <div className="col-lg-12">
                 <nav className="navbar navbar-expand-lg">
                   <a className="navbar-brand" href="/">
-                    <img src="assets/images/logo/logo.png" alt="Logo" width="180px" height="120px" />
+                    <img src="assets/images/logo/logo.png" alt="Logo" width="150px" height="100px" />
                   </a>
                   <button
                     className="navbar-toggler"
@@ -225,9 +225,7 @@ const LandingPage = () => {
                   <div className="section-title">
                     <div className="line"></div>
                     <h3 className="title">
-                      <span>
-                        <FormattedMessage id="aboutTitle1" />
-                      </span>
+                      <FormattedMessage id="aboutTitle1" />
                     </h3>
                   </div>
                   {/* <!-- section title --> */}
@@ -239,7 +237,11 @@ const LandingPage = () => {
               </div>
               <div className="col-lg-6">
                 <div className="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <img src="assets/images/about/about1.svg" alt="about" />
+                  <img
+                    src="assets/images/about/vision.png"
+                    alt="about"
+                    style={{ borderRadius: '4rem', boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.3)' }}
+                  />
                 </div>
                 {/* <!-- about image --> */}
               </div>
@@ -277,7 +279,11 @@ const LandingPage = () => {
               </div>
               <div className="col-lg-6 order-lg-first">
                 <div className="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <img src="assets/images/about/about2.svg" alt="about" />
+                  <img
+                    src="assets/images/about/mission.png"
+                    alt="about"
+                    style={{ borderRadius: '4rem', boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.3)' }}
+                  />
                 </div>
                 {/* <!-- about image --> */}
               </div>
@@ -288,42 +294,6 @@ const LandingPage = () => {
         </div>
         {/* <!--====== ABOUT PART ENDS ======--> */}
 
-        {/* <!--====== ABOUT PART START ======--> */}
-        <div className="about-area pt-70">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <div className="section-title">
-                    <div className="line"></div>
-                    <h3 className="title">
-                      <span>
-                        <FormattedMessage id="aboutTitle3" />
-                      </span>
-                    </h3>
-                  </div>
-                  {/* <!-- section title --> */}
-                  <p className="text">
-                    <FormattedMessage id="aboutDescription3" />
-                  </p>
-                </div>
-                {/* <!-- about content --> */}
-              </div>
-              <div className="col-lg-6">
-                <div className="about-image text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <img src="assets/images/about/about3.svg" alt="about" />
-                </div>
-                {/* <!-- about image --> */}
-              </div>
-            </div>
-            {/* <!-- row --> */}
-          </div>
-          {/* <!-- container --> */}
-          <div className="about-shape-1">
-            <img src="assets/images/about/about-shape-1.svg" alt="shape" />
-          </div>
-        </div>
-        {/* <!--====== ABOUT PART ENDS ======--> */}
       </section>
 
       {/* <!--====== FOOTER PART START ======--> */}
@@ -347,7 +317,7 @@ const LandingPage = () => {
               <div className="col-lg-4 col-md-6 col-sm-8">
                 <div className="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                   <a className="logo" href="javascript:void(0)">
-                    <img src="assets/images/logo/logo.png" alt="logo" width="180px" height="120px" />
+                    <img src="assets/images/logo/logo.png" alt="logo" width="150px" height="100px" />
                   </a>
                   <p className="text">
                     <FormattedMessage id="contactUsDescription1" />
@@ -407,12 +377,12 @@ const LandingPage = () => {
                     </div>
                     <ul className="link">
                       <li>
-                        <a href="https://tarasolutions-cr.com/eng/acerca-de/">
+                        <a href="#about">
                           <FormattedMessage id="contactUsLink1" />
                         </a>
                       </li>
                       <li>
-                        <a href="/send-request">
+                        <a href="/join-us">
                           <FormattedMessage id="contactUsLink2" />
                         </a>
                       </li>

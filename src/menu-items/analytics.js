@@ -22,18 +22,18 @@ const analytics = {
       icon: icons.StockOutlined
     },
     {
-      id: 'student-performance',
-      title: <FormattedMessage id="studentPerformance" />,
-      type: 'item',
-      url: '/analytics/student-performance',
-      icon: icons.BarChartOutlined
-    },
-    {
       id: 'drop-out',
       title: <FormattedMessage id="dropOutAnalysis" />,
       type: 'item',
       url: '/analytics/drop-out',
       icon: icons.RiseOutlined
+    },
+    {
+      id: 'student-performance',
+      title: <FormattedMessage id="studentPerformance" />,
+      type: 'item',
+      url: '/analytics/student-performance',
+      icon: icons.BarChartOutlined
     },
     {
       id: 'retention',

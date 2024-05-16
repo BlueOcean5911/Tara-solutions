@@ -16,7 +16,7 @@ const MaintenanceComingSoon = Loadable(lazy(() => import('pages/maintenance/comi
 const Dashboard = Loadable(lazy(() => import('pages/dashboard/dashboard')));
 const PredictStudentPerformance = Loadable(lazy(() => import('pages/analytics/RiskDetector')));
 const ComprehensiveAnalysis = Loadable(lazy(() => import('pages/analytics/StudentPerformance')));
-const DropOutAnalysis = Loadable(lazy(() => import('pages/analytics/DropOutAnalysis')));
+const DropOutAnalysis = Loadable(lazy(() => import('pages/analytics/DropOutDetector')));
 const RetentionAnalysis = Loadable(lazy(() => import('pages/analytics/RetentionAnalysis')));
 
 // ==============================|| MAIN ROUTING ||============================== //
