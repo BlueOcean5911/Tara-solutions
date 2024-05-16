@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import {
@@ -8,7 +8,6 @@ import {
   FormControl,
   FormHelperText,
   Grid,
-  Link,
   InputAdornment,
   InputLabel,
   OutlinedInput,
@@ -38,6 +37,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 // import country data
 import countries from 'data/countries';
 import { sendEmail } from 'service/send-mail';
+import { FormattedMessage } from 'react-intl';
 
 // ============================|| JWT - REGISTER ||============================ //
 
@@ -152,7 +152,9 @@ const AuthRegister = () => {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="firstname-signup">First Name*</InputLabel>
+                  <InputLabel htmlFor="firstname-signup">
+                    <FormattedMessage id="firstname" />*
+                  </InputLabel>
                   <OutlinedInput
                     id="firstname-login"
                     type="firstname"
@@ -173,7 +175,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="lastname-signup">Last Name*</InputLabel>
+                  <InputLabel htmlFor="lastname-signup">
+                    <FormattedMessage id="lastname" />*
+                  </InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.lastname && errors.lastname)}
@@ -195,7 +199,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="company-signup">Company*</InputLabel>
+                  <InputLabel htmlFor="company-signup">
+                    <FormattedMessage id="company" />*
+                  </InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.company && errors.company)}
@@ -216,7 +222,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="country-signup">Country</InputLabel>
+                  <InputLabel htmlFor="country-signup">
+                    <FormattedMessage id="country" />
+                  </InputLabel>
                   <Autocomplete
                     id="country-signup"
                     fullWidth
@@ -260,8 +268,10 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="phone-number-signup">Phone number*</InputLabel>
-                  <Grid container xs={12}>
+                  <InputLabel htmlFor="phone-number-signup">
+                    <FormattedMessage id="phoneNumber" />*
+                  </InputLabel>
+                  <Grid container>
                     <Grid item xs={2}>
                       <Stack direction="row" justifyContent="center" alignItems="center" sx={{ height: '100%' }}>
                         {values.country ? values.country.phone : ''}
@@ -291,7 +301,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="email-signup">Email Address*</InputLabel>
+                  <InputLabel htmlFor="email-signup">
+                    <FormattedMessage id="emailAddress" />
+                  *</InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.email && errors.email)}
@@ -313,7 +325,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="password-signup">Password*</InputLabel>
+                  <InputLabel htmlFor="password-signup">
+                    <FormattedMessage id="pwd" />*
+                  </InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.password && errors.password)}
@@ -363,7 +377,9 @@ const AuthRegister = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="email-signup">Message</InputLabel>
+                  <InputLabel htmlFor="email-signup">
+                    <FormattedMessage id="message" />
+                  </InputLabel>
                   <TextField
                     fullWidth
                     id="message"
@@ -374,22 +390,9 @@ const AuthRegister = () => {
                     maxRows={5}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Input your message"
                     inputProps={{}}
                   />
                 </Stack>
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="body2">
-                  By Signing up, you agree to our &nbsp;
-                  <Link variant="subtitle2" component={RouterLink} to="#">
-                    Terms of Service
-                  </Link>
-                  &nbsp; and &nbsp;
-                  <Link variant="subtitle2" component={RouterLink} to="#">
-                    Privacy Policy
-                  </Link>
-                </Typography>
               </Grid>
               {errors.submit && (
                 <Grid item xs={12}>
@@ -399,7 +402,7 @@ const AuthRegister = () => {
               <Grid item xs={12}>
                 <AnimateButton>
                   <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
-                    Send request
+                    <FormattedMessage id="sendRequest" />
                   </Button>
                 </AnimateButton>
               </Grid>

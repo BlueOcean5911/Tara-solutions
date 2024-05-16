@@ -1,119 +1,141 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
-import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 import { FormattedMessage } from 'react-intl';
-import GenderAnalytics from 'sections/dashboard/GenderAnalytics';
-import FinalResult from 'sections/dashboard/PerformanceAnalytics';
-import PerformanceOnCourse from 'sections/dashboard/PerformanceOnCourse';
-import QualificationAnalytics from 'sections/dashboard/QualificationAnalytics';
 
 import PropTypes from 'prop-types';
+import PieChart from 'components/@extended/charts/PieChart';
+import DistributionChart from 'components/@extended/charts/DistributionChart';
+import RadialbarChart from 'components/@extended/charts/RadialbarChart';
+import PolarChart from 'components/@extended/charts/PolarChart';
+import CircleChart from 'components/@extended/charts/CircleChart';
+import RadarChart from 'components/@extended/charts/RadarChart';
 
 const AnalysisComponent = ({ data }) => {
   return (
     <>
-      {/* row 1 */}
-      <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Typography variant="h5">
-          <FormattedMessage id="compEduPerfMetrics" />
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce
-          title={<FormattedMessage id="totalStudents" />}
-          count={data.total_student}
-          extra={<FormattedMessage id="activeUsers" />}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce
-          title={<FormattedMessage id="totalCourse" />}
-          count={data.total_course}
-          extra={<FormattedMessage id="activeCourse" />}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce
-          title={<FormattedMessage id="assessmentAverage" />}
-          count={data.average_score}
-          extra={<FormattedMessage id="assessmentAverageDisp" />}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <AnalyticEcommerce
-          title={<FormattedMessage id="engagementAverage" />}
-          count={data.engagement_average}
-          extra={<FormattedMessage id="engagementAverageDisp" />}
-        />
-      </Grid>
-
-      {/* row 2 */}
-      <Grid item xs={12} md={2} lg={3} />
+      {/* firstPeriodRetentionRate */}
       <Grid item xs={12} md={8} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="dropOut" />
+                <FormattedMessage id="firstPeriodRetentionRate" />
               </Typography>
             </Stack>
           </Box>
-          <FinalResult series={data.predicted_student_performance.series} labels={data.predicted_student_performance.labels} />
+          <PieChart
+            id="firstPeriodRetentionRate"
+            series={Object.values(data['firstPeriodRetentionRate'])}
+            labels={Object.keys(data['firstPeriodRetentionRate'])}
+          />
         </MainCard>
       </Grid>
-      <Grid item xs={12} md={2} lg={3} />
-
-      {/* row 3 */}
-      <Grid item xs={12} lg={3} />
-      <Grid item xs={12} lg={6}>
+      {/* percentageOfStudentsReEnrolledInRealTime */}
+      <Grid item xs={12} md={8} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predictedDOOnGender" />
+                <FormattedMessage id="percentageOfStudentsReEnrolledInRealTime" />
               </Typography>
             </Stack>
           </Box>
-          <GenderAnalytics series={data.perf_on_gender.series} categories={data.perf_on_gender.categories} />
+          <RadialbarChart
+            id="percentageOfStudentsReEnrolledInRealTime"
+            series={Object.values(data['percentageOfStudentsReEnrolledInRealTime'])}
+            labels={Object.keys(data['percentageOfStudentsReEnrolledInRealTime'])}
+          />
         </MainCard>
       </Grid>
-      <Grid item xs={12} lg={3} />
-      {/* <Grid item xs={12} lg={6}>
+      {/* percentageOfStudentsAtRisk */}
+      <Grid item xs={12} md={8} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predDOOnAge" />
+                <FormattedMessage id="percentageOfStudentsAtRisk" />
               </Typography>
             </Stack>
           </Box>
-          <AgeAnalytics series={data.age_on_course.series} categories={data.age_on_course.categories} />
-        </MainCard>
-      </Grid> */}
-
-      {/* row 4 */}
-      <Grid item xs={12} lg={6}>
-        <MainCard sx={{ mt: 2 }} content={false}>
-          <Box sx={{ p: 3, pb: 0 }}>
-            <Stack spacing={2}>
-              <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predDOOnCourse" />
-              </Typography>
-            </Stack>
-          </Box>
-          <PerformanceOnCourse series={data.perf_on_course.series} categories={data.perf_on_course.categories} />
+          <DistributionChart
+            id="percentageOfStudentsAtRisk"
+            series={[{ name: 'percentageOfStudentsAtRisk', data: Object.values(data['percentageOfStudentsAtRisk']) }]}
+            categories={Object.keys(data['percentageOfStudentsAtRisk'])}
+          />
         </MainCard>
       </Grid>
-      <Grid item xs={12} lg={6}>
+      {/* percentageOfStudentMessagesWithPositiveFeedback */}
+      <Grid item xs={12} md={8} lg={6}>
         <MainCard sx={{ mt: 2 }} content={false}>
           <Box sx={{ p: 3, pb: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h6" color="textSecondary">
-                <FormattedMessage id="predDOOnQualification" />
+                <FormattedMessage id="percentageOfStudentMessagesWithPositiveFeedback" />
               </Typography>
             </Stack>
           </Box>
-          <QualificationAnalytics series={data.perf_on_qualification.series} categories={data.perf_on_qualification.categories} />
+          <PolarChart
+            id="percentageOfStudentMessagesWithPositiveFeedback"
+            series={Object.values(data['percentageOfStudentMessagesWithPositiveFeedback'])}
+            labels={Object.keys(data['percentageOfStudentMessagesWithPositiveFeedback'])}
+          />
+        </MainCard>
+      </Grid>
+      {/* percentageOfImplementedActionRecommendations */}
+      <Grid item xs={12} md={8} lg={6}>
+        <MainCard sx={{ mt: 2 }} content={false}>
+          <Box sx={{ p: 3, pb: 0 }}>
+            <Stack spacing={2}>
+              <Typography variant="h6" color="textSecondary">
+                <FormattedMessage id="percentageOfImplementedActionRecommendations" />
+              </Typography>
+            </Stack>
+          </Box>
+          <CircleChart
+            id="percentageOfImplementedActionRecommendations"
+            series={Object.values(data['percentageOfImplementedActionRecommendations'])}
+            labels={Object.keys(data['percentageOfImplementedActionRecommendations'])}
+          />
+        </MainCard>
+      </Grid>
+      {/* percentageOfAtRiskStudentsShowingImprovement */}
+      <Grid item xs={12} md={8} lg={6}>
+        <MainCard sx={{ mt: 2 }} content={false}>
+          <Box sx={{ p: 3, pb: 0 }}>
+            <Stack spacing={2}>
+              <Typography variant="h6" color="textSecondary">
+                <FormattedMessage id="percentageOfAtRiskStudentsShowingImprovement" />
+              </Typography>
+            </Stack>
+          </Box>
+          <PieChart
+            id="percentageOfAtRiskStudentsShowingImprovement"
+            series={Object.values(data['percentageOfAtRiskStudentsShowingImprovement'])}
+            labels={Object.keys(data['percentageOfAtRiskStudentsShowingImprovement'])}
+            type="pie"
+          />
+        </MainCard>
+      </Grid>
+      {/* percentageOfImprovementsInStudentExperience */}
+      <Grid item xs={12} md={8} lg={12}>
+        <MainCard sx={{ mt: 2 }} content={false}>
+          <Box sx={{ p: 3, pb: 0 }}>
+            <Stack spacing={2}>
+              <Typography variant="h6" color="textSecondary">
+                <FormattedMessage id="percentageOfImprovementsInStudentExperience" />
+              </Typography>
+            </Stack>
+          </Box>
+          <RadarChart
+            id="percentageOfImprovementsInStudentExperience"
+            series={[
+              {
+                name: 'percentageOfImprovementsInStudentExperience',
+                data: Object.values(data['percentageOfImprovementsInStudentExperience'])
+              }
+            ]}
+            categories={Object.keys(data['percentageOfImprovementsInStudentExperience'])}
+          />
         </MainCard>
       </Grid>
     </>

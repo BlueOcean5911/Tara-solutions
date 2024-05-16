@@ -82,7 +82,7 @@ const RiskDetector = () => {
                 height={'100%'}
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', paddingX: { md: '2rem' } }}
               >
-                <Typography variant="h2" color={'grey'} marginY={'1rem'}>
+                <Typography variant="h1" color={'grey'} marginY={'1rem'}>
                   <FormattedMessage id="riskDetectorTitle" />
                 </Typography>
                 <Typography sx={{ fontSize: { xs: '1rem', md: '1rem' } }} color={'black'}>
