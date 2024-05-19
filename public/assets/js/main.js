@@ -20,10 +20,14 @@
     
         if (window.pageYOffset > sticky) {
         header_navbar.classList.add("sticky");
-        logo.src = "assets/images/logo/logo-2.png";
+        if (logo !== null) {
+            logo.src = "assets/images/logo/logo-2.png"; 
+        }
         } else {
         header_navbar.classList.remove("sticky");
-        logo.src = "assets/images/logo/logo.png";
+        if (logo !== null) {
+            logo.src = "assets/images/logo/logo.png";
+        }
         }
     }
 
