@@ -23,7 +23,7 @@
   "aboutDescription3": "AI facilitates collaborative learning environments by providing personalized recommendations and adaptive learning experiences.",
 
   "contactUs": "Contact Us",
-  "contactUsTitle1": "Let's Dive into LMS Analytics",
+  "contactUsTitle1": "Let's Join into LMS Analytics",
   "contactUsDescription1": "Tara Smart Metrics is a software platform that utilizes advanced Machine Learning and Artificial Intelligence techniques to assess students' academic performance. This system analyzes a set of specific metrics to determine the level of dropout risk for each student, enabling educational institutions to take proactive measures to maintain or even improve enrollment rates and student performance.",
   "contactUsLocationTitle": "LOCATIONS",
   "contactUsLocation1": "Costa Rica, San Jose, Barrio Amón, Ave 13, Calle 7.",
@@ -129,7 +129,7 @@
   "add": "Add",
   "delete": "Delete",
   "deleteUser": "Delete User",
-
+  
   "demoRequest": "Demo Request",
 
   "logout": "Log out",
@@ -147,9 +147,38 @@
   "warning": "Warning",
   "warningMessage1": "Data file is not uploaded successfully. Please recheck your data format and try again.",
 
-  "errorLogin": "Email or password is incorrect."
+  "errorLogin": "Email or password is incorrect.",
+
+  "firstPeriodRetentionRate": "First Period Retention Rate",
+  "percentageOfStudentsAtRisk": "Percentage of Students at Risk",
+  "percentageOfStudentsReEnrolledInRealTime": "Percentage of Students Re-Enrolled in Real Time",
+  "percentageOfStudentMessagesWithPositiveFeedback": "Percentage of Student Messages with Positive Feedback",
+  "percentageOfImplementedActionRecommendations": "Percentage of Implemented Action Recommendations",
+  "percentageOfAtRiskStudentsShowingImprovement": "Percentage of At-Risk Students Showing Improvement",
+  "percentageOfImprovementsInStudentExperience": "Percentage of Improvements in Student Experience",
 
 
 
+  "login": "Login",
+  "notHaveAccount": "Don't have an account?",
+  "emailAddress": "Email Address",
+  "pwd": "Password",
+  "keepMeSignIn": "Keep me sign in",
+  "forgotPwd": "Forgot Password?",
 
+  "joinUs": "Join Us",
+  "haveAccount": "Already have an account?",
+  
+  "country": "Country",
+  "phoneNumber": "Phone number",
+  "sendRequest": "Send Request",
+  "message": "Message",
+
+  "poor": "Poor",
+  "weak": "Weak",
+  "normal": "Normal",
+  "good": "Good",
+  "strong": "Strong",
+
+  "successSend": "Successfully send request!"
 }

@@ -81,7 +81,9 @@ const AuthLogin = () => {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="email-login">Email Address</InputLabel>
+                  <InputLabel htmlFor="email-login">
+                    <FormattedMessage id="emailAddress" />
+                  </InputLabel>
                   <OutlinedInput
                     id="email-login"
                     type="email"
@@ -102,7 +104,9 @@ const AuthLogin = () => {
               </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
-                  <InputLabel htmlFor="password-login">Password</InputLabel>
+                  <InputLabel htmlFor="password-login">
+                    <FormattedMessage id="pwd" />
+                  </InputLabel>
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.password && errors.password)}
@@ -147,10 +151,14 @@ const AuthLogin = () => {
                         size="small"
                       />
                     }
-                    label={<Typography variant="h6">Keep me sign in</Typography>}
+                    label={
+                      <Typography variant="h6">
+                        <FormattedMessage id="keepMeSignIn" />
+                      </Typography>
+                    }
                   />
                   <Link variant="h6" component={RouterLink} to="/forgot-password" color="text.primary">
-                    Forgot Password?
+                    <FormattedMessage id="forgotPwd" />
                   </Link>
                 </Stack>
               </Grid>
@@ -164,7 +172,7 @@ const AuthLogin = () => {
               <Grid item xs={12}>
                 <AnimateButton>
                   <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
-                    Login
+                    <FormattedMessage id="login" />
                   </Button>
                 </AnimateButton>
               </Grid>

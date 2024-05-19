@@ -4,6 +4,7 @@ import { lazy } from 'react';
 import GuestGuard from 'utils/route-guard/GuestGuard';
 import CommonLayout from 'layout/CommonLayout';
 import Loadable from 'components/Loadable';
+import Localization from 'layout/MainLayout/Header/HeaderContent/Localization';
 
 // render - login
 const AuthLogin = Loadable(lazy(() => import('pages/auth/login')));
@@ -19,6 +20,7 @@ const LoginRoutes = {
   path: '/',
   element: (
     <GuestGuard>
+      <Localization />
       <CommonLayout />
     </GuestGuard>
   ),

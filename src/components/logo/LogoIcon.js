@@ -23,7 +23,7 @@ const LogoIcon = () => {
      *
      */
     <>
-      <img src="/asset/image/logo-icon.png" alt="Analytics" style={{ width: '40px', height: '30px' }} />
+      <img src="/assets/images/logo/logo-icon.png" alt="Analytics" style={{ width: '40px', height: '30px' }} />
     </>
   );
 };
