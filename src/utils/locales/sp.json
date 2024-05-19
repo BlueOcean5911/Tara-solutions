@@ -149,5 +149,12 @@
 
   "inputYourMessage": "Input your message",
 
-  "successSend": "¡Enviar solicitud exitosamente!"
+  "successSend": "¡Enviar solicitud exitosamente!",
+
+  "addUser": "Agregar Usuario",
+
+  "firstname-required": "El nombre es obligatorio",
+  "lastname-required": "El apellido es obligatorio",
+  "email-required": "El correo electrónico es obligatorio",
+  "pwd-required": "Se requiere contraseña"
 }

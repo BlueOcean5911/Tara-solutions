@@ -102,10 +102,10 @@ export const SupabaseProvider = ({ children }) => {
         throw error;
       }
 
-      createDemoRequest(email, firstName, lastName, company);
+      // createDemoRequest(email, firstName, lastName, company);
     } catch (error) {
       // Handle registration error
-      console.error('Error signing up:', error.message);
+      throw new Error('This email is already existed');
     }
   };
 

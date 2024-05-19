@@ -1,5 +1,5 @@
 // material-ui
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Modal, Typography } from '@mui/material';
 // project import
 import MainCard from 'components/MainCard';
 import { useState, useEffect } from 'react';
@@ -26,8 +26,22 @@ import { TablePagination } from 'components/third-party/ReactTable';
 import { UserDeleteOutlined } from '@ant-design/icons';
 import { deleteUser, getUsers, updateUser } from 'service/users.service';
 import { FormattedMessage } from 'react-intl';
+import AddUser from 'sections/admin/AddUser';
 
 // ==============================|| REACT TABLE ||============================== //
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #888',
+  borderRadius: '1rem',
+  boxShadow: 24,
+  p: 4
+};
 
 const ColumnCell = ({ row, deleteRowByEmail }) => (
   <>
@@ -207,7 +221,7 @@ const CellEdit = ({ value: initialValue, row: { index }, column: { id, dataType 
             }}
             enableReinitialize
             validationSchema={userInfoSchema}
-            onSubmit={() => { }}
+            onSubmit={() => {}}
           >
             {({ values, handleChange, handleBlur, errors, touched }) => (
               <Form>
@@ -274,6 +288,7 @@ const CellEdit = ({ value: initialValue, row: { index }, column: { id, dataType 
 const Users = () => {
   const [data, setData] = useState([]);
   const [skipPageReset, setSkipPageReset] = useState(false);
+  const [addUserOpenModal, setAddUserOpenModal] = useState(false);
 
   useEffect(() => {
     fetchUserData();
@@ -343,6 +358,10 @@ const Users = () => {
     );
   };
 
+  const addRow = (userData) => {
+    setData((old) => [...old, userData]);
+  };
+
   const deleteRowByEmail = (email) => {
     setData((old) => old.filter((row) => row.email !== email), []);
   };
@@ -359,6 +378,9 @@ const Users = () => {
       <Grid item xs={12} lg={12}>
         <MainCard>
           <ScrollX>
+            <Button variant="contained" color="primary" onClick={() => setAddUserOpenModal(true)}>
+              <FormattedMessage id="addUser" />
+            </Button>
             <ReactTable
               columns={columns}
               data={data}
@@ -370,6 +392,23 @@ const Users = () => {
           </ScrollX>
         </MainCard>
       </Grid>
+      <Modal
+        open={addUserOpenModal}
+        onClose={() => setAddUserOpenModal(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h3" component="h2">
+            <FormattedMessage id="addUser" />
+          </Typography>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
+            <Typography id="modal-modal-description" textAlign={'left'} variant="h5" sx={{ mt: 2 }}>
+              <AddUser closeModal={() => setAddUserOpenModal(false)} addUser={addRow} />
+            </Typography>
+          </Typography>
+        </Box>
+      </Modal>
     </Grid>
   );
 };

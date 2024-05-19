@@ -21,13 +21,13 @@ const analytics = {
       url: '/admin/users',
       icon: icons.TeamOutlined
     },
-    {
-      id: 'waitlist',
-      title: <FormattedMessage id="demoRequest" />,
-      type: 'item',
-      url: '/admin/demo-request',
-      icon: icons.PlusCircleOutlined
-    }
+    // {
+    //   id: 'waitlist',
+    //   title: <FormattedMessage id="demoRequest" />,
+    //   type: 'item',
+    //   url: '/admin/demo-request',
+    //   icon: icons.PlusCircleOutlined
+    // }
   ]
 };
 

@@ -180,5 +180,11 @@
   "good": "Good",
   "strong": "Strong",
 
-  "successSend": "Successfully send request!"
+  "successSend": "Successfully send request!",
+
+  "addUser": "Add User",
+  "firstname-required": "First Name is required",
+  "lastname-required": "Last Name is required",
+  "email-required": "Email is required",
+  "pwd-required": "Password is required"
 }

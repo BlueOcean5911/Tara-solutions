@@ -25,7 +25,7 @@ const LogoMain = ({ reverse }) => {
      *
      */
     <>
-      <img src="assets/images/logo/logo-2.png" alt="Analytics" style={{ width: '140px', height: '80px' }} />
+      <img src="/assets/images/logo/logo-2.png" alt="Analytics" style={{ width: '140px', height: '80px' }} />
     </>
   );
 };
